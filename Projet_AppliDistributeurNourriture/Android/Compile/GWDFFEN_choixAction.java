@@ -1,0 +1,1065 @@
+/**
+ * Code généré par WinDev Mobile - NE PAS MODIFIER !
+ * Objet WinDev Mobile : Fenêtre
+ * Classe Android : FEN_choixAction
+ * Date : 29/01/2016 09:28:06
+ * Version de wdjava.dll  : 20.0.143.0
+ */
+
+
+package com.masociete.projet_applidistributeurnourriture.wdgen;
+
+
+import com.masociete.projet_applidistributeurnourriture.*;
+import fr.pcsoft.wdjava.core.types.*;
+import fr.pcsoft.wdjava.core.*;
+import fr.pcsoft.wdjava.ui.champs.fenetre.*;
+import fr.pcsoft.wdjava.ui.champs.bouton.*;
+import fr.pcsoft.wdjava.api.*;
+import fr.pcsoft.wdjava.ui.champs.libelle.*;
+import fr.pcsoft.wdjava.ui.champs.combo.*;
+import fr.pcsoft.wdjava.ui.activite.*;
+/*Imports trouvés dans le code WL*/
+/*Fin Imports trouvés dans le code WL*/
+
+
+
+public class GWDFFEN_choixAction extends WDFenetre
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs de FEN_choixAction
+////////////////////////////////////////////////////////////////////////////
+
+/**
+ * BTN_Paramètres
+ */
+class GWDBTN_Parametres extends WDBouton
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°1 de FEN_choixAction.BTN_Paramètres
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2782376296526019260l);
+
+super.setChecksum("679706204");
+
+super.setNom("BTN_Paramètres");
+
+super.setType(4);
+
+super.setLibelle("Paramètres");
+
+super.setMenuContextuelSysteme();
+
+super.setNote("");
+
+super.setNavigable(true);
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(40, 90);
+
+super.setTailleInitiale(160, 48);
+
+super.setPlan(0);
+
+super.setImageEtat(1);
+
+super.setImageFondEtat(1);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(1);
+
+super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+
+super.setNumTab(1);
+
+super.setLettreAppel(65535);
+
+super.setTypeBouton(0);
+
+super.setTypeActionPredefinie(0);
+
+super.setBoutonOnOff(false);
+
+super.setLibelleVAlign(1);
+
+super.setLibelleHAlign(1);
+
+super.setPresenceLibelle(true);
+
+super.setImage("", 0, 2);
+
+super.setStyleLibelleRepos(0x0, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleLibelleSurvol(0x808080, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleLibelleEnfonce(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleCadreRepos(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
+
+super.setImageFond("", 1, 0, 2, 1);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+/**
+ * Traitement: Clic sur BTN_Paramètres
+ */
+public void clicSurBoutonGauche()
+{
+super.clicSurBoutonGauche();
+
+// OuvreFenêtreMobile(FEN_Paramètres)
+WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_Parametres);
+
+}
+
+
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+super.activerEcouteurClic();
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDBTN_Parametres mWD_BTN_Parametres;
+
+/**
+ * BTN_RationsMtn
+ */
+class GWDBTN_RationsMtn extends WDBouton
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°2 de FEN_choixAction.BTN_RationsMtn
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2782376296526084796l);
+
+super.setChecksum("679771740");
+
+super.setNom("BTN_RationsMtn");
+
+super.setType(4);
+
+super.setLibelle("Envoie");
+
+super.setMenuContextuelSysteme();
+
+super.setNote("");
+
+super.setNavigable(true);
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(40, 196);
+
+super.setTailleInitiale(116, 48);
+
+super.setPlan(0);
+
+super.setImageEtat(1);
+
+super.setImageFondEtat(1);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(2);
+
+super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+
+super.setNumTab(2);
+
+super.setLettreAppel(65535);
+
+super.setTypeBouton(0);
+
+super.setTypeActionPredefinie(0);
+
+super.setBoutonOnOff(false);
+
+super.setLibelleVAlign(1);
+
+super.setLibelleHAlign(1);
+
+super.setPresenceLibelle(true);
+
+super.setImage("", 0, 2);
+
+super.setStyleLibelleRepos(0x0, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleLibelleSurvol(0x808080, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleLibelleEnfonce(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleCadreRepos(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
+
+super.setImageFond("", 1, 0, 2, 1);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDBTN_RationsMtn mWD_BTN_RationsMtn;
+
+/**
+ * LIB_EnvoieRation
+ */
+class GWDLIB_EnvoieRation extends WDLibelle
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°3 de FEN_choixAction.LIB_EnvoieRation
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2782376906412500028l);
+
+super.setChecksum("680830626");
+
+super.setNom("LIB_EnvoieRation");
+
+super.setType(3);
+
+super.setTypeSaisie(0);
+
+super.setMasqueSaisie(new WDChaineU("0"));
+
+super.setLibelle("Envoie direct de ration(s) :");
+
+super.setNote("");
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(40, 162);
+
+super.setTailleInitiale(219, 32);
+
+super.setPlan(0);
+
+super.setCadrageHorizontal(0);
+
+super.setCadrageVertical(0);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(3);
+
+super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+
+super.setEllipse(0);
+
+super.setPresenceLibelle(true);
+
+super.setStyleLibelle(0xFFFFFF, 0xFFFFFFFF, creerPolice("MS Shell Dlg", -9.000000, 0), 3);
+
+super.setCadreExterieur(1, 0xFFFFFFFF, 0xE0E0E0, 0x808080, 4, 4);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDLIB_EnvoieRation mWD_LIB_EnvoieRation;
+
+/**
+ * LIB_ChoixAction
+ */
+class GWDLIB_ChoixAction extends WDLibelle
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°4 de FEN_choixAction.LIB_ChoixAction
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2782377211356822388l);
+
+super.setChecksum("682475041");
+
+super.setNom("LIB_ChoixAction");
+
+super.setType(3);
+
+super.setTypeSaisie(0);
+
+super.setMasqueSaisie(new WDChaineU("0"));
+
+super.setLibelle("Choix de l'action");
+
+super.setNote("");
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(77, 12);
+
+super.setTailleInitiale(182, 32);
+
+super.setPlan(0);
+
+super.setCadrageHorizontal(0);
+
+super.setCadrageVertical(0);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(4);
+
+super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+
+super.setEllipse(0);
+
+super.setPresenceLibelle(true);
+
+super.setStyleLibelle(0xFFFFFF, 0xFFFFFFFF, creerPolice("MS Shell Dlg", -12.000000, 0), 3);
+
+super.setCadreExterieur(1, 0xFFFFFFFF, 0xE0E0E0, 0x808080, 4, 4);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDLIB_ChoixAction mWD_LIB_ChoixAction;
+
+/**
+ * COMBO_RationActuel
+ */
+class GWDCOMBO_RationActuel extends WDCombo
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°5 de FEN_choixAction.COMBO_RationActuel
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setRectLibelle(0,2,4,44);
+super.setRectCompPrincipal(4,2,100,44);
+super.setNom("COMBO_RationActuel");
+
+super.setType(10002);
+
+super.setLibelle("");
+
+super.setMenuContextuelSysteme();
+
+super.setNote("");
+
+super.setNavigable(true);
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(169, 196);
+
+super.setTailleInitiale(104, 48);
+
+super.setValeurInitiale("");
+
+super.setPlan(0);
+
+super.setCadrageHorizontal(0);
+
+super.setContenuInitial("1\r\n2\r\n3\r\n4\r\n5");
+
+super.setTriee(false);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(5);
+
+super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+
+super.setNumTab(3);
+
+super.setLettreAppel(65535);
+
+super.setRetourneValeurProgrammation(false);
+
+super.setPersistant(false);
+
+super.setPresenceLibelle(true);
+
+super.setStyleLibelle(0xF4000000, creerPolice("MS Shell Dlg", -11.000000, 0), 4);
+
+super.setCadreExterieur(1, 0xFFFFFFFF, 0xF1000000, 0xF3000000, 4, 4);
+
+super.setCadreInterne(2, 0xFFFFFF, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleElement(0x0, 0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0), 30);
+
+super.setStyleSelection(0xF5800000, 0xF5000000, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDCOMBO_RationActuel mWD_COMBO_RationActuel;
+
+/**
+ * BTN_Logs
+ */
+class GWDBTN_Logs extends WDBouton
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°6 de FEN_choixAction.BTN_Logs
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2782676304271627187l);
+
+super.setChecksum("664791086");
+
+super.setNom("BTN_Logs");
+
+super.setType(4);
+
+super.setLibelle("Logs");
+
+super.setMenuContextuelSysteme();
+
+super.setNote("");
+
+super.setNavigable(true);
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(40, 400);
+
+super.setTailleInitiale(160, 48);
+
+super.setPlan(0);
+
+super.setImageEtat(1);
+
+super.setImageFondEtat(1);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(6);
+
+super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+
+super.setNumTab(5);
+
+super.setLettreAppel(65535);
+
+super.setTypeBouton(0);
+
+super.setTypeActionPredefinie(0);
+
+super.setBoutonOnOff(false);
+
+super.setLibelleVAlign(1);
+
+super.setLibelleHAlign(1);
+
+super.setPresenceLibelle(true);
+
+super.setImage("", 0, 2);
+
+super.setStyleLibelleRepos(0x0, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleLibelleSurvol(0x808080, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleLibelleEnfonce(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleCadreRepos(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
+
+super.setImageFond("", 1, 0, 2, 1);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDBTN_Logs mWD_BTN_Logs;
+
+/**
+ * LIB_Consulter_les_logs
+ */
+class GWDLIB_Consulter_les_logs extends WDLibelle
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°7 de FEN_choixAction.LIB_Consulter_les_logs
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2782676377286809369l);
+
+super.setChecksum("665528797");
+
+super.setNom("LIB_Consulter_les_logs");
+
+super.setType(3);
+
+super.setTypeSaisie(0);
+
+super.setMasqueSaisie(new WDChaineU("0"));
+
+super.setLibelle("Consulter les logs :");
+
+super.setNote("");
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(40, 366);
+
+super.setTailleInitiale(160, 32);
+
+super.setPlan(0);
+
+super.setCadrageHorizontal(0);
+
+super.setCadrageVertical(0);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(7);
+
+super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+
+super.setEllipse(0);
+
+super.setPresenceLibelle(true);
+
+super.setStyleLibelle(0xFFFFFF, 0xFFFFFFFF, creerPolice("MS Shell Dlg", -9.000000, 0), 3);
+
+super.setCadreExterieur(1, 0xFFFFFFFF, 0xE0E0E0, 0x808080, 4, 4);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDLIB_Consulter_les_logs mWD_LIB_Consulter_les_logs;
+
+/**
+ * LIB_paramètres
+ */
+class GWDLIB_parametres extends WDLibelle
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°8 de FEN_choixAction.LIB_paramètres
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2782676682233031508l);
+
+super.setChecksum("669072991");
+
+super.setNom("LIB_paramètres");
+
+super.setType(3);
+
+super.setTypeSaisie(0);
+
+super.setMasqueSaisie(new WDChaineU("0"));
+
+super.setLibelle("Rentrer des paramètres :");
+
+super.setNote("");
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(40, 56);
+
+super.setTailleInitiale(204, 32);
+
+super.setPlan(0);
+
+super.setCadrageHorizontal(0);
+
+super.setCadrageVertical(0);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(8);
+
+super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+
+super.setEllipse(0);
+
+super.setPresenceLibelle(true);
+
+super.setStyleLibelle(0xFFFFFF, 0xFFFFFFFF, creerPolice("MS Shell Dlg", -9.000000, 0), 3);
+
+super.setCadreExterieur(1, 0xFFFFFFFF, 0xE0E0E0, 0x808080, 4, 4);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDLIB_parametres mWD_LIB_parametres;
+
+/**
+ * BTN_Appeler
+ */
+class GWDBTN_Appeler extends WDBouton
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°9 de FEN_choixAction.BTN_Appeler
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2782677064486783011l);
+
+super.setChecksum("670735695");
+
+super.setNom("BTN_Appeler");
+
+super.setType(4);
+
+super.setLibelle("Appeler");
+
+super.setMenuContextuelSysteme();
+
+super.setNote("");
+
+super.setNavigable(true);
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(40, 300);
+
+super.setTailleInitiale(160, 48);
+
+super.setPlan(0);
+
+super.setImageEtat(1);
+
+super.setImageFondEtat(1);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(9);
+
+super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+
+super.setNumTab(4);
+
+super.setLettreAppel(65535);
+
+super.setTypeBouton(0);
+
+super.setTypeActionPredefinie(0);
+
+super.setBoutonOnOff(false);
+
+super.setLibelleVAlign(1);
+
+super.setLibelleHAlign(1);
+
+super.setPresenceLibelle(true);
+
+super.setImage("", 0, 2);
+
+super.setStyleLibelleRepos(0x0, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleLibelleSurvol(0x808080, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleLibelleEnfonce(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleCadreRepos(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
+
+super.setImageFond("", 1, 0, 2, 1);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDBTN_Appeler mWD_BTN_Appeler;
+
+/**
+ * LIB_Appeler
+ */
+class GWDLIB_Appeler extends WDLibelle
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°10 de FEN_choixAction.LIB_Appeler
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2782677330774948259l);
+
+super.setChecksum("670928197");
+
+super.setNom("LIB_Appeler");
+
+super.setType(3);
+
+super.setTypeSaisie(0);
+
+super.setMasqueSaisie(new WDChaineU("0"));
+
+super.setLibelle("Appeler l'animal :");
+
+super.setNote("");
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(40, 266);
+
+super.setTailleInitiale(148, 32);
+
+super.setPlan(0);
+
+super.setCadrageHorizontal(0);
+
+super.setCadrageVertical(0);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(10);
+
+super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+
+super.setEllipse(0);
+
+super.setPresenceLibelle(true);
+
+super.setStyleLibelle(0xFFFFFF, 0xFFFFFFFF, creerPolice("MS Shell Dlg", -9.000000, 0), 3);
+
+super.setCadreExterieur(1, 0xFFFFFFFF, 0xE0E0E0, 0x808080, 4, 4);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDLIB_Appeler mWD_LIB_Appeler;
+
+/**
+ * Traitement: Déclarations globales de FEN_choixAction
+ */
+public void declarerGlobale(WDObjet[] WD_tabParam)
+{
+super.declarerGlobale(WD_tabParam);
+int WD_ntabParamLen = 0;
+if(WD_tabParam!=null) WD_ntabParamLen = WD_tabParam.length;
+
+
+}
+
+
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+// Création des champs de la fenêtre FEN_choixAction
+////////////////////////////////////////////////////////////////////////////
+protected void creerChamps()
+{
+mWD_BTN_Parametres = new GWDBTN_Parametres();
+mWD_BTN_RationsMtn = new GWDBTN_RationsMtn();
+mWD_LIB_EnvoieRation = new GWDLIB_EnvoieRation();
+mWD_LIB_ChoixAction = new GWDLIB_ChoixAction();
+mWD_COMBO_RationActuel = new GWDCOMBO_RationActuel();
+mWD_BTN_Logs = new GWDBTN_Logs();
+mWD_LIB_Consulter_les_logs = new GWDLIB_Consulter_les_logs();
+mWD_LIB_parametres = new GWDLIB_parametres();
+mWD_BTN_Appeler = new GWDBTN_Appeler();
+mWD_LIB_Appeler = new GWDLIB_Appeler();
+
+}
+////////////////////////////////////////////////////////////////////////////
+// Initialisation de la fenêtre FEN_choixAction
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.setQuid(2782376296525953724l);
+
+super.setChecksum("685038853");
+
+super.setNom("FEN_choixAction");
+
+super.setType(1);
+
+super.setMenuContextuelSysteme();
+
+super.setNote("");
+
+super.setCouleur(0x0);
+
+super.setCouleurFond(0xF2000000);
+
+super.setPositionInitiale(0, 0);
+
+super.setTailleInitiale(320, 508);
+
+super.setTitre("choixAction");
+
+super.setTailleMin(-1, -1);
+
+super.setTailleMax(20000, 20000);
+
+super.setVisibleInitial(true);
+
+super.setPersistant(true);
+
+super.setGFI(true);
+
+super.setAnimationFenetre(0);
+
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\BG_Hybrid_Menu.png?_3NP_1_223_1_180", 1, 0, 1);
+
+
+activerEcoute();
+
+////////////////////////////////////////////////////////////////////////////
+// Initialisation des champs de FEN_choixAction
+////////////////////////////////////////////////////////////////////////////
+mWD_BTN_Parametres.initialiserObjet();
+super.ajouter("BTN_Paramètres", mWD_BTN_Parametres);
+mWD_BTN_RationsMtn.initialiserObjet();
+super.ajouter("BTN_RationsMtn", mWD_BTN_RationsMtn);
+mWD_LIB_EnvoieRation.initialiserObjet();
+super.ajouter("LIB_EnvoieRation", mWD_LIB_EnvoieRation);
+mWD_LIB_ChoixAction.initialiserObjet();
+super.ajouter("LIB_ChoixAction", mWD_LIB_ChoixAction);
+mWD_COMBO_RationActuel.initialiserObjet();
+super.ajouter("COMBO_RationActuel", mWD_COMBO_RationActuel);
+mWD_BTN_Logs.initialiserObjet();
+super.ajouter("BTN_Logs", mWD_BTN_Logs);
+mWD_LIB_Consulter_les_logs.initialiserObjet();
+super.ajouter("LIB_Consulter_les_logs", mWD_LIB_Consulter_les_logs);
+mWD_LIB_parametres.initialiserObjet();
+super.ajouter("LIB_paramètres", mWD_LIB_parametres);
+mWD_BTN_Appeler.initialiserObjet();
+super.ajouter("BTN_Appeler", mWD_BTN_Appeler);
+mWD_LIB_Appeler.initialiserObjet();
+super.ajouter("LIB_Appeler", mWD_LIB_Appeler);
+
+super.terminerInitialisation();
+}
+/**
+* Retourne le mode d'affichage de l'ActionBar de la fenêtre.
+*/
+public int getModeActionBar()
+{
+return 0;
+}
+/**
+* Retourne vrai si la fenêtre est maximisée, faux sinon.
+*/
+public boolean isMaximisee()
+{
+return true;
+}
+/**
+* Retourne vrai si la fenêtre a une barre de titre, faux sinon.
+*/
+public boolean isAvecBarreDeTitre()
+{
+return false;
+}
+/**
+* Retourne le mode d'affichage de la barre système de la fenêtre.
+*/
+public int getModeBarreSysteme()
+{
+return 1;
+}
+/**
+* Retourne vrai si la fenêtre est munie d'ascenseurs automatique, faux sinon.
+*/
+public boolean isAvecAscenseurAuto()
+{
+return true;
+}
+/**
+* Retourne Vrai si on doit appliquer un theme "dark" (sombre) ou Faux si on doit appliquer "light" (clair) à la fenêtre.
+* Ce choix se base sur la couleur du libellé par défaut dans le gabarit de la fenêtre.
+*/
+public boolean isThemeDark()
+{
+return false;
+}
+public static class WDActiviteFenetre extends WDActivite
+{
+protected WDFenetre getFenetre()
+{
+return GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_choixAction;
+}
+}
+/**
+* Retourne le nom du gabarit associée à la fenêtre.
+*/
+public String getNomGabarit()
+{
+return "";
+}
+}
