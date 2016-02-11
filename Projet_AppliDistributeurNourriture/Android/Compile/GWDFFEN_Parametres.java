@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Fenêtre
  * Classe Android : FEN_Paramètres
- * Date : 04/02/2016 15:57:03
+ * Date : 11/02/2016 15:47:15
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -21,7 +21,6 @@ import fr.pcsoft.wdjava.ui.champs.libelle.*;
 import fr.pcsoft.wdjava.ui.champs.bouton.*;
 import fr.pcsoft.wdjava.ui.champs.zr.*;
 import fr.pcsoft.wdjava.ui.champs.saisie.*;
-import fr.pcsoft.wdjava.core.types.tableau.*;
 import fr.pcsoft.wdjava.ui.activite.*;
 /*Imports trouvés dans le code WL*/
 /*Fin Imports trouvés dans le code WL*/
@@ -116,7 +115,7 @@ super.terminerInitialisation();
  * Traitement: Initialisation de COMBO_RepasParJour
  */
 public void init()
-// Initialise la combo box du nombre de repas à 0.
+// Initialise la combo box du nombre de repas à 1.
 {
 super.init();
 
@@ -134,10 +133,20 @@ WDAPIVM.executeTraitement(this,33);
  * Traitement: Sélection d'une ligne de COMBO_RepasParJour
  */
 public void selectionLigne()
-// Permet l'ajout de ligne 
-// jusqu'à atteindre le nombre de repas désiré dans la combo box en haut de la page.
 {
 super.selectionLigne();
+
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables locales au traitement
+// (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
+////////////////////////////////////////////////////////////////////////////
+WDObjet vWD_nCompteur= new WDEntier();
+
+
+
+// nCompteur est un entier
+
 
 // SI MoiMême > ZR_Params..Occurrence ALORS
 if(WDContexte.getMoiMeme().opSup(mWD_ZR_Params.getOccurrence()))
@@ -145,8 +154,11 @@ if(WDContexte.getMoiMeme().opSup(mWD_ZR_Params.getOccurrence()))
 // 	TANTQUE ZR_Params..Occurrence <> MoiMême
 while(mWD_ZR_Params.getOccurrence().opDiff(WDContexte.getMoiMeme()))
 {
-// 		ZoneRépétéeAjouteLigne(ZR_Params)
-WDAPIZoneRepetee.zoneRepeteeAjouteLigne(mWD_ZR_Params);
+// 		nCompteur = ZoneRépétéeAjouteLigne(ZR_Params)
+vWD_nCompteur.setValeur(WDAPIZoneRepetee.zoneRepeteeAjouteLigne(mWD_ZR_Params));
+
+// 		ZR_Params[nCompteur].SAI_Heure = Gauche(HeureSys(),4)
+mWD_ZR_Params.get(vWD_nCompteur).get("SAI_Heure").setValeur(WDAPIChaine.gauche(WDAPIDate.heureSys(),4));
 
 }
 
@@ -286,7 +298,7 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(85, 442);
+super.setPositionInitiale(85, 441);
 
 super.setTailleInitiale(150, 48);
 
@@ -350,8 +362,36 @@ public void clicSurBoutonGauche()
 {
 super.clicSurBoutonGauche();
 
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables locales au traitement
+// (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
+////////////////////////////////////////////////////////////////////////////
+WDObjet vWD_ok= new WDBooleen();
+
+WDObjet vWD_nTailleZR= new WDEntier();
+
+WDObjet vWD_nTailleZRinf= new WDEntier();
+
+
+
 // gnNbreRepas = COMBO_RepasParJour
 GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.setValeur(mWD_COMBO_RepasParJour);
+
+// ok est un booléen = vrai
+
+vWD_ok.setValeur(true);
+
+
+// nTailleZR est un entier = ZR_Params..Occurrence
+
+vWD_nTailleZR.setValeur(mWD_ZR_Params.getOccurrence());
+
+
+// nTailleZRinf est un entier = ZR_Params..Occurrence - 1
+
+vWD_nTailleZRinf.setValeur(mWD_ZR_Params.getOccurrence().opMoins(1));
+
 
 // SI gnNbreRepas = "0" ALORS
 if(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal("0"))
@@ -361,6 +401,30 @@ WDAPIDialogue.info("Merci de sélectionner un nombre de repas pour la journée")
 
 }
 else
+{
+// 	POUR i = 1 A nTailleZRinf
+for(WDObjet vWD_i = new WDEntier(1);vWD_i.opInfEgal(vWD_nTailleZRinf);vWD_i.opInc())
+{
+// 		POUR j = i + 1 A nTailleZR
+for(WDObjet vWD_j = new WDEntier(vWD_i.opPlus(1));vWD_j.opInfEgal(vWD_nTailleZR);vWD_j.opInc())
+{
+// 			SI ZR_Params[i].SAI_Heure = ZR_Params[j].SAI_Heure et ok = Vrai ALORS
+if((mWD_ZR_Params.get(vWD_i).get("SAI_Heure").opEgal(mWD_ZR_Params.get(vWD_j).get("SAI_Heure")) & vWD_ok.opEgal(true)))
+{
+// 				Info("Erreur ! Saisissez des repas différents ! ")
+WDAPIDialogue.info("Erreur ! Saisissez des repas différents ! ");
+
+// 				ok = faux
+vWD_ok.setValeur(false);
+
+}
+
+}
+
+}
+
+// SI ok = Vrai ALORS
+if(vWD_ok.opEgal(true))
 {
 // ZoneRépétéeTrie("+ZR_Params")
 WDAPIZoneRepetee.zoneRepeteeTrie("+ZR_Params");
@@ -415,71 +479,6 @@ GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation5.setValeur(mWD_ZR
 
 }
 
-// si gnNbreRepas = 1 et gnRation1 = 0 ALORS
-if((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(1) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation1.opEgal(0)))
-{
-// 	Info("Erreur ! Merci de sélectionner des rations/repas pour les horaires choisis.")
-WDAPIDialogue.info("Erreur ! Merci de sélectionner des rations/repas pour les horaires choisis.");
-
-}
-else if((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(1) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation1.opDiff(0)))
-{
-// 	OuvreFenêtreMobile(FEN_RécapitulatifParamètres)
-WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_RecapitulatifParametres);
-
-}
-
-// si gnNbreRepas = 2 et (gnRation1 = 0 ou gnRation2 = 0) ALORS
-if((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(2) & (GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation1.opEgal(0) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation2.opEgal(0))))
-{
-// 	Info("Erreur ! Merci de sélectionner des rations/repas pour les horaires choisis.")
-WDAPIDialogue.info("Erreur ! Merci de sélectionner des rations/repas pour les horaires choisis.");
-
-}
-else if(((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(2) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation1.opDiff(0)) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation2.opDiff(0)))
-{
-// 	OuvreFenêtreMobile(FEN_RécapitulatifParamètres)
-WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_RecapitulatifParametres);
-
-}
-
-// SI gnNbreRepas = 3 ET (gnRation1 = 0 OU gnRation2 = 0  ou gnRation3 = 0) ALORS
-if((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(3) & ((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation1.opEgal(0) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation2.opEgal(0)) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation3.opEgal(0))))
-{
-// 	Info("Erreur ! Merci de sélectionner des rations/repas pour les horaires choisis.")
-WDAPIDialogue.info("Erreur ! Merci de sélectionner des rations/repas pour les horaires choisis.");
-
-}
-else if((((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(3) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation1.opDiff(0)) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation2.opDiff(0)) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation3.opDiff(0)))
-{
-// 	OuvreFenêtreMobile(FEN_RécapitulatifParamètres)
-WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_RecapitulatifParametres);
-
-}
-
-// SI gnNbreRepas = 4 ET (gnRation1 = 0 OU gnRation2 = 0  OU gnRation3 = 0 ou gnRation4 = 0) ALORS
-if((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(4) & (((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation1.opEgal(0) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation2.opEgal(0)) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation3.opEgal(0)) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation4.opEgal(0))))
-{
-// 	Info("Erreur ! Merci de sélectionner des rations/repas pour les horaires choisis.")
-WDAPIDialogue.info("Erreur ! Merci de sélectionner des rations/repas pour les horaires choisis.");
-
-}
-else if(((((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(4) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation1.opDiff(0)) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation2.opDiff(0)) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation3.opDiff(0)) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation4.opDiff(0)))
-{
-// 	OuvreFenêtreMobile(FEN_RécapitulatifParamètres)
-WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_RecapitulatifParametres);
-
-}
-
-// SI gnNbreRepas = 5 ET (gnRation1 = 0 OU gnRation2 = 0  OU gnRation3 = 0 OU gnRation4 = 0 ou gnRation5 = 0) ALORS
-if((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(5) & ((((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation1.opEgal(0) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation2.opEgal(0)) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation3.opEgal(0)) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation4.opEgal(0)) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation5.opEgal(0))))
-{
-// 	Info("Erreur ! Merci de sélectionner des rations/repas pour les horaires choisis.")
-WDAPIDialogue.info("Erreur ! Merci de sélectionner des rations/repas pour les horaires choisis.");
-
-}
-else if((((((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(5) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation1.opDiff(0)) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation2.opDiff(0)) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation3.opDiff(0)) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation4.opDiff(0)) & GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation5.opDiff(0)))
-{
 // 	OuvreFenêtreMobile(FEN_RécapitulatifParamètres)
 WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_RecapitulatifParametres);
 
@@ -979,27 +978,101 @@ public void activerEcoute()
 public GWDZR_Params mWD_ZR_Params;
 
 /**
- * BTN_Horaire
+ * LIB_Horaires
  */
-class GWDBTN_Horaire extends WDBouton
+class GWDLIB_Horaires extends WDLibelle
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°5 de FEN_Paramètres.BTN_Horaire
+// Déclaration des champs du fils n°5 de FEN_Paramètres.LIB_Horaires
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
 super.initialiserObjet();
 super.setFenetre( getWDFenetreThis() );
-super.setQuid(2787878248403365508l);
+super.setQuid(2788963380482225008l);
 
-super.setChecksum("667909667");
+super.setChecksum("669752371");
 
-super.setNom("BTN_Horaire");
+super.setNom("LIB_Horaires");
+
+super.setType(3);
+
+super.setTypeSaisie(0);
+
+super.setMasqueSaisie(new WDChaineU("0"));
+
+super.setLibelle("Horaire(s)");
+
+super.setNote("");
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(60, 100);
+
+super.setTailleInitiale(116, 32);
+
+super.setPlan(0);
+
+super.setCadrageHorizontal(0);
+
+super.setCadrageVertical(0);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(5);
+
+super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+
+super.setEllipse(0);
+
+super.setPresenceLibelle(true);
+
+super.setStyleLibelle(0xFFFFFF, 0xFFFFFFFF, creerPolice("MS Shell Dlg", -12.000000, 0), 3);
+
+super.setCadreExterieur(1, 0xFFFFFFFF, 0xE0E0E0, 0x808080, 4, 4);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDLIB_Horaires mWD_LIB_Horaires;
+
+/**
+ * BTN_Ajouter
+ */
+class GWDBTN_Ajouter extends WDBouton
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°6 de FEN_Paramètres.BTN_Ajouter
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2788963689721253783l);
+
+super.setChecksum("671136362");
+
+super.setNom("BTN_Ajouter");
 
 super.setType(4);
 
-super.setLibelle("Horaire(s)");
+super.setLibelle("");
 
 super.setMenuContextuelSysteme();
 
@@ -1009,13 +1082,13 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(60, 100);
+super.setPositionInitiale(19, 101);
 
-super.setTailleInitiale(109, 31);
+super.setTailleInitiale(39, 32);
 
 super.setPlan(0);
 
-super.setImageEtat(1);
+super.setImageEtat(5);
 
 super.setImageFondEtat(1);
 
@@ -1025,7 +1098,7 @@ super.setTailleMax(2147483647, 2147483647);
 
 super.setVisibleInitial(true);
 
-super.setAltitude(5);
+super.setAltitude(6);
 
 super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
 
@@ -1045,11 +1118,11 @@ super.setLibelleHAlign(1);
 
 super.setPresenceLibelle(true);
 
-super.setImage("", 0, 2);
+super.setImage("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\plus.png?E5", 0, 2);
 
-super.setStyleLibelleRepos(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
+super.setStyleLibelleRepos(0x0, creerPolice("MS Shell Dlg", -11.000000, 0));
 
-super.setStyleLibelleSurvol(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
+super.setStyleLibelleSurvol(0x808080, creerPolice("MS Shell Dlg", -11.000000, 0));
 
 super.setStyleLibelleEnfonce(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
 
@@ -1065,16 +1138,78 @@ activerEcoute();
 super.terminerInitialisation();
 }
 
+/**
+ * Traitement: Clic sur BTN_Ajouter
+ */
+public void clicSurBoutonGauche()
+// Permet l'ajout de ligne dans la zone répétée si l'on a pas atteint sa taille maximum.
+{
+super.clicSurBoutonGauche();
+
+// si ZR_Params..Occurrence = 5 ALORS
+if(mWD_ZR_Params.getOccurrence().opEgal(5))
+{
+// 	info("Nombre de repas maximum atteint !")
+WDAPIDialogue.info("Nombre de repas maximum atteint !");
+
+}
+else
+{
+// 	ZoneRépétéeAjouteLigne(ZR_Params)
+WDAPIZoneRepetee.zoneRepeteeAjouteLigne(mWD_ZR_Params);
+
+// 	COMBO_RepasParJour++
+mWD_COMBO_RepasParJour.opInc();
+
+}
+
+// SI ZR_Params..Occurrence = 2 ALORS
+if(mWD_ZR_Params.getOccurrence().opEgal(2))
+{
+// 	ZR_Params[2].SAI_Heure = Gauche(HeureSys(),4)
+mWD_ZR_Params.get(2).get("SAI_Heure").setValeur(WDAPIChaine.gauche(WDAPIDate.heureSys(),4));
+
+}
+
+// SI ZR_Params..Occurrence = 3 ALORS
+if(mWD_ZR_Params.getOccurrence().opEgal(3))
+{
+// 	ZR_Params[3].SAI_Heure = Gauche(HeureSys(),4)
+mWD_ZR_Params.get(3).get("SAI_Heure").setValeur(WDAPIChaine.gauche(WDAPIDate.heureSys(),4));
+
+}
+
+// SI ZR_Params..Occurrence = 4 ALORS
+if(mWD_ZR_Params.getOccurrence().opEgal(4))
+{
+// 	ZR_Params[4].SAI_Heure = Gauche(HeureSys(),4)
+mWD_ZR_Params.get(4).get("SAI_Heure").setValeur(WDAPIChaine.gauche(WDAPIDate.heureSys(),4));
+
+}
+
+// SI ZR_Params..Occurrence = 5 ALORS
+if(mWD_ZR_Params.getOccurrence().opEgal(5))
+{
+// 	ZR_Params[5].SAI_Heure = Gauche(HeureSys(),4)
+mWD_ZR_Params.get(5).get("SAI_Heure").setValeur(WDAPIChaine.gauche(WDAPIDate.heureSys(),4));
+
+}
+
+}
+
+
+
 // Activation des écouteurs: 
 public void activerEcoute()
 {
+super.activerEcouteurClic();
 }
 
 ////////////////////////////////////////////////////////////////////////////
 // Déclaration des variables globales
 ////////////////////////////////////////////////////////////////////////////
 }
-public GWDBTN_Horaire mWD_BTN_Horaire;
+public GWDBTN_Ajouter mWD_BTN_Ajouter;
 
 /**
  * Traitement: Déclarations globales de FEN_Paramètres
@@ -1094,7 +1229,7 @@ if(WD_tabParam!=null) WD_ntabParamLen = WD_tabParam.length;
  * Traitement: Fin d'initialisation de FEN_Paramètres
  */
 public void init()
-//  Déclaration des variables
+//  Chargement du code XML
 {
 super.init();
 
@@ -1103,154 +1238,82 @@ super.init();
 // Déclaration des variables locales au traitement
 // (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
 ////////////////////////////////////////////////////////////////////////////
-WDObjet vWD_NomCheminFichier= new WDChaineU();
-
-WDObjet vWD_IDFichier= new WDEntier();
-
-WDObjet vWD_sLigneLue= new WDChaineU();
-
-WDObjet vWD_tabParams = WDVarNonAllouee.ref;
+WDObjet vWD_SourceXML= new WDChaineU();
 
 
-// NomCheminFichier est une chaîne
+
+// SourceXML est une chaîne = fChargeTexte("/storage/sdcard0/Download/FichierParamètresXML.xml")
+
+vWD_SourceXML.setValeur(WDAPIFichier.fChargeTexte("/storage/sdcard0/Download/FichierParamètresXML.xml"));
 
 
-// IDFichier est un entier
-
-
-// sLigneLue est une chaîne
-
-
-// tabParams est un tableau de chaînes
-vWD_tabParams = new WDTableauSimple(1, new int[]{0}, 0, 16);
-
-// NomCheminFichier = "/storage/sdcard0/Download/FichierParamètres.txt"
-vWD_NomCheminFichier.setValeur("/storage/sdcard0/Download/FichierParamètres.txt");
-
-// IDFichier = fOuvre(NomCheminFichier)
-vWD_IDFichier.setValeur(WDAPIFichier.fOuvre(vWD_NomCheminFichier.getString()));
-
-// SI IDFichier = -1 ALORS
-if(vWD_IDFichier.opEgal(-1))
+// SI SourceXML = "" ALORS
+if(vWD_SourceXML.opEgal(""))
 {
-// 	info("Aucun fichier existant")
-WDAPIDialogue.info("Aucun fichier existant");
+// 	Info("Pas de fichier existant !")
+WDAPIDialogue.info("Pas de fichier existant !");
 
 }
 else
 {
-// 	SI ErreurDétectée ALORS
-if(WDObjet.ErreurDetectee.getBoolean())
-{
-// 		Info("Le fichier est vide !")
-WDAPIDialogue.info("Le fichier est vide !");
-
-// 		RETOUR
-return;
-
-}
-
-// 	fLitLigne(IDFichier)
-WDAPIFichier.fLitLigne(vWD_IDFichier.getInt());
-
-// 	BOUCLE
-while(true)
-{
-// 		sLigneLue = fLitLigne(IDFichier)
-vWD_sLigneLue.setValeur(WDAPIFichier.fLitLigne(vWD_IDFichier.getInt()));
-
-// 		SI ErreurDétectée ALORS
-if(WDObjet.ErreurDetectee.getBoolean())
-{
-// 			Info("Le fichier est vide !")
-WDAPIDialogue.info("Le fichier est vide !");
-
-// 			SORTIR
-break;
-
-//////////////////////////////////////////////////////////
-// Code Inaccessible
-// 
-}
-
-// 		SI sLigneLue = EOT ALORS SORTIR
-if(vWD_sLigneLue.opEgal(""))
-{
-// 		SI sLigneLue = EOT ALORS SORTIR
-break;
-
-//////////////////////////////////////////////////////////
-// Code Inaccessible
-// 
-}
-
-// 		Ajoute(tabParams,sLigneLue)
-WDAPICollection.ajoute(vWD_tabParams,vWD_sLigneLue);
-
-}
-
-
-// 	fFerme(IDFichier)
-WDAPIFichier.fFerme(vWD_IDFichier.getInt());
-
-// 	ToastAffiche("Lecture du fichier terminée")
-WDAPIToast.toastAffiche("Lecture du fichier terminée");
-
-// 	COMBO_RepasParJour = tabParams[1]
-mWD_COMBO_RepasParJour.setValeur(vWD_tabParams.get(1));
+// 	COMBO_RepasParJour = XMLExtraitChaîne(SourceXML, "NbreRepas")
+mWD_COMBO_RepasParJour.setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"NbreRepas"));
 
 // 	ExécuteTraitement(COMBO_RepasParJour,trtSélection)
 WDAPIVM.executeTraitement(mWD_COMBO_RepasParJour,33);
 
-// 	ZR_Params[1].SAI_Heure = tabParams[2]
-mWD_ZR_Params.get(1).get("SAI_Heure").setValeur(vWD_tabParams.get(2));
+// 	ZR_Params[1].SAI_Heure = XMLExtraitChaîne(SourceXML, "Horaire1")
+mWD_ZR_Params.get(1).get("SAI_Heure").setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"Horaire1"));
 
-// 	ZR_Params[1].COMBO_ration = tabParams[3]
-mWD_ZR_Params.get(1).get("COMBO_ration").setValeur(vWD_tabParams.get(3));
+// 	ZR_Params[1].COMBO_ration = XMLExtraitChaîne(SourceXML, "Ration1")
+mWD_ZR_Params.get(1).get("COMBO_ration").setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"Ration1"));
 
 // 	SI COMBO_RepasParJour = 2 OU COMBO_RepasParJour = 3 OU COMBO_RepasParJour = 4 OU COMBO_RepasParJour = 5 ALORS
 if((((mWD_COMBO_RepasParJour.opEgal(2) | mWD_COMBO_RepasParJour.opEgal(3)) | mWD_COMBO_RepasParJour.opEgal(4)) | mWD_COMBO_RepasParJour.opEgal(5)))
 {
-// 		ZR_Params[2].SAI_Heure = tabParams[4]
-mWD_ZR_Params.get(2).get("SAI_Heure").setValeur(vWD_tabParams.get(4));
+// 		ZR_Params[2].SAI_Heure = XMLExtraitChaîne(SourceXML, "Horaire2")
+mWD_ZR_Params.get(2).get("SAI_Heure").setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"Horaire2"));
 
-// 		ZR_Params[2].COMBO_ration = tabParams[5]
-mWD_ZR_Params.get(2).get("COMBO_ration").setValeur(vWD_tabParams.get(5));
+// 		ZR_Params[2].COMBO_ration = XMLExtraitChaîne(SourceXML, "Ration2")
+mWD_ZR_Params.get(2).get("COMBO_ration").setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"Ration2"));
 
 }
 
 // 	SI COMBO_RepasParJour = 3 OU COMBO_RepasParJour = 4 OU COMBO_RepasParJour = 5 ALORS
 if(((mWD_COMBO_RepasParJour.opEgal(3) | mWD_COMBO_RepasParJour.opEgal(4)) | mWD_COMBO_RepasParJour.opEgal(5)))
 {
-// 		ZR_Params[3].SAI_Heure = tabParams[6]
-mWD_ZR_Params.get(3).get("SAI_Heure").setValeur(vWD_tabParams.get(6));
+// 		ZR_Params[3].SAI_Heure = XMLExtraitChaîne(SourceXML, "Horaire3")
+mWD_ZR_Params.get(3).get("SAI_Heure").setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"Horaire3"));
 
-// 		ZR_Params[3].COMBO_ration = tabParams[7]
-mWD_ZR_Params.get(3).get("COMBO_ration").setValeur(vWD_tabParams.get(7));
+// 		ZR_Params[3].COMBO_ration = XMLExtraitChaîne(SourceXML, "Ration3")
+mWD_ZR_Params.get(3).get("COMBO_ration").setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"Ration3"));
 
 }
 
 // 	SI COMBO_RepasParJour = 4 OU COMBO_RepasParJour = 5 ALORS
 if((mWD_COMBO_RepasParJour.opEgal(4) | mWD_COMBO_RepasParJour.opEgal(5)))
 {
-// 		ZR_Params[4].SAI_Heure = tabParams[8]
-mWD_ZR_Params.get(4).get("SAI_Heure").setValeur(vWD_tabParams.get(8));
+// 		ZR_Params[4].SAI_Heure = XMLExtraitChaîne(SourceXML, "Horaire4")
+mWD_ZR_Params.get(4).get("SAI_Heure").setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"Horaire4"));
 
-// 		ZR_Params[4].COMBO_ration = tabParams[9]
-mWD_ZR_Params.get(4).get("COMBO_ration").setValeur(vWD_tabParams.get(9));
+// 		ZR_Params[4].COMBO_ration = XMLExtraitChaîne(SourceXML, "Ration4")
+mWD_ZR_Params.get(4).get("COMBO_ration").setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"Ration4"));
 
 }
 
 // 	SI COMBO_RepasParJour = 5 ALORS
 if(mWD_COMBO_RepasParJour.opEgal(5))
 {
-// 		ZR_Params[5].SAI_Heure = tabParams[10]
-mWD_ZR_Params.get(5).get("SAI_Heure").setValeur(vWD_tabParams.get(10));
+// 		ZR_Params[5].SAI_Heure = XMLExtraitChaîne(SourceXML, "Horaire5")
+mWD_ZR_Params.get(5).get("SAI_Heure").setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"Horaire5"));
 
-// 		ZR_Params[5].COMBO_ration = tabParams[11]	
-mWD_ZR_Params.get(5).get("COMBO_ration").setValeur(vWD_tabParams.get(11));
+// 		ZR_Params[5].COMBO_ration = XMLExtraitChaîne(SourceXML, "Ration5")	
+mWD_ZR_Params.get(5).get("COMBO_ration").setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"Ration5"));
 
 }
+
+// 	ToastAffiche("Fichier chargé !")
+WDAPIToast.toastAffiche("Fichier chargé !");
 
 }
 
@@ -1275,7 +1338,8 @@ mWD_COMBO_RepasParJour = new GWDCOMBO_RepasParJour();
 mWD_LIB_Ration_s_par_repas = new GWDLIB_Ration_s_par_repas();
 mWD_BTN_Suivant = new GWDBTN_Suivant();
 mWD_ZR_Params = new GWDZR_Params();
-mWD_BTN_Horaire = new GWDBTN_Horaire();
+mWD_LIB_Horaires = new GWDLIB_Horaires();
+mWD_BTN_Ajouter = new GWDBTN_Ajouter();
 
 }
 ////////////////////////////////////////////////////////////////////////////
@@ -1333,8 +1397,10 @@ mWD_BTN_Suivant.initialiserObjet();
 super.ajouter("BTN_Suivant", mWD_BTN_Suivant);
 mWD_ZR_Params.initialiserObjet();
 super.ajouter("ZR_Params", mWD_ZR_Params);
-mWD_BTN_Horaire.initialiserObjet();
-super.ajouter("BTN_Horaire", mWD_BTN_Horaire);
+mWD_LIB_Horaires.initialiserObjet();
+super.ajouter("LIB_Horaires", mWD_LIB_Horaires);
+mWD_BTN_Ajouter.initialiserObjet();
+super.ajouter("BTN_Ajouter", mWD_BTN_Ajouter);
 
 super.terminerInitialisation();
 }

@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Projet
  * Classe Android : Projet_AppliDistributeurNourriture
- * Date : 04/02/2016 16:15:42
+ * Date : 11/02/2016 15:47:15
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -87,35 +87,35 @@ super.ajouterVariableGlobale("gnNbreRepas",vWD_gnNbreRepas);
 
 
 
-// ghHoraire1 est une Heure
+// ghHoraire1 est une heure
 vWD_ghHoraire1 = new WDHeure();
 
 super.ajouterVariableGlobale("ghHoraire1",vWD_ghHoraire1);
 
 
 
-// ghHoraire2 est une Heure
+// ghHoraire2 est une heure
 vWD_ghHoraire2 = new WDHeure();
 
 super.ajouterVariableGlobale("ghHoraire2",vWD_ghHoraire2);
 
 
 
-// ghHoraire3 est une Heure
+// ghHoraire3 est une heure
 vWD_ghHoraire3 = new WDHeure();
 
 super.ajouterVariableGlobale("ghHoraire3",vWD_ghHoraire3);
 
 
 
-// ghHoraire4 est une Heure
+// ghHoraire4 est une heure
 vWD_ghHoraire4 = new WDHeure();
 
 super.ajouterVariableGlobale("ghHoraire4",vWD_ghHoraire4);
 
 
 
-// ghHoraire5 est une Heure
+// ghHoraire5 est une heure
 vWD_ghHoraire5 = new WDHeure();
 
 super.ajouterVariableGlobale("ghHoraire5",vWD_ghHoraire5);
@@ -185,8 +185,8 @@ GWDPProjet_AppliDistributeurNourriture.ms_Project = new GWDPProjet_AppliDistribu
 GWDPProjet_AppliDistributeurNourriture.ms_Project.setLangueProjet(new int[] {1}, new int[] {0}, 1);
 GWDPProjet_AppliDistributeurNourriture.ms_Project.setNomCollectionProcedure(new String[]{});
 }
-public String getVersionApplication(){ return "0.0.44.0";}
-public String getNomAPK(){ return "Distribution de nourriture";}
+public String getVersionApplication(){ return "0.0.77.0";}
+public String getNomAPK(){ return "Distributeur";}
 public int getIdNomApplication(){return com.masociete.projet_applidistributeurnourriture.R.string.app_name;}
 public boolean isModeAnsi(){ return false;}
 public boolean isAffectationTableauParCopie(){ return true;}
@@ -213,8 +213,9 @@ return false;
 }
 protected void declarerRessources()
 {
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_4_np3_1_223_1_180, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\POUB.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.poub_3_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_5_np3_1_223_1_180, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\POUB.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.poub_4_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\PLUS.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.plus_3_selector, "");
 super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_2_np3_1_223_1_180, "");
 super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_2_np3_1_223_1_180, "");
 super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_2_np3_1_223_1_180, "");

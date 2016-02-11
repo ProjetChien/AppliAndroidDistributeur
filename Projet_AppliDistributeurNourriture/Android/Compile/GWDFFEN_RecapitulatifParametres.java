@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Fenêtre
  * Classe Android : FEN_RécapitulatifParamètres
- * Date : 04/02/2016 16:15:42
+ * Date : 11/02/2016 15:47:15
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -271,27 +271,27 @@ public void activerEcoute()
 public GWDSAI_RecapParams mWD_SAI_RecapParams;
 
 /**
- * BTN_Enregistrer
+ * BTN_Envoyer
  */
-class GWDBTN_Enregistrer extends WDBouton
+class GWDBTN_Envoyer extends WDBouton
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°3 de FEN_RécapitulatifParamètres.BTN_Enregistrer
+// Déclaration des champs du fils n°3 de FEN_RécapitulatifParamètres.BTN_Envoyer
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
 super.initialiserObjet();
 super.setFenetre( getWDFenetreThis() );
-super.setQuid(2782699617362814543l);
+super.setQuid(2790472236851296207l);
 
-super.setChecksum("673501182");
+super.setChecksum("668352166");
 
-super.setNom("BTN_Enregistrer");
+super.setNom("BTN_Envoyer");
 
 super.setType(4);
 
-super.setLibelle("Enregistrer");
+super.setLibelle("Envoyer");
 
 super.setMenuContextuelSysteme();
 
@@ -301,7 +301,7 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(13, 383);
+super.setPositionInitiale(88, 385);
 
 super.setTailleInitiale(146, 48);
 
@@ -318,172 +318,6 @@ super.setTailleMax(2147483647, 2147483647);
 super.setVisibleInitial(true);
 
 super.setAltitude(3);
-
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
-
-super.setNumTab(3);
-
-super.setLettreAppel(65535);
-
-super.setTypeBouton(0);
-
-super.setTypeActionPredefinie(0);
-
-super.setBoutonOnOff(false);
-
-super.setLibelleVAlign(1);
-
-super.setLibelleHAlign(1);
-
-super.setPresenceLibelle(true);
-
-super.setImage("", 0, 2);
-
-super.setStyleLibelleRepos(0x0, creerPolice("MS Shell Dlg", -11.000000, 0));
-
-super.setStyleLibelleSurvol(0x808080, creerPolice("MS Shell Dlg", -11.000000, 0));
-
-super.setStyleLibelleEnfonce(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
-
-super.setStyleCadreRepos(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
-
-super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
-
-super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
-
-super.setImageFond("", 1, 0, 2, 1);
-
-activerEcoute();
-super.terminerInitialisation();
-}
-
-/**
- * Traitement: Clic sur BTN_Enregistrer
- */
-public void clicSurBoutonGauche()
-{
-super.clicSurBoutonGauche();
-
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des variables locales au traitement
-// (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
-////////////////////////////////////////////////////////////////////////////
-WDObjet vWD_sParams= new WDChaineU();
-
-
-
-// sParams est une chaîne
-
-
-// sParams = "" + RC
-vWD_sParams.setValeur("\r\n");
-
-// sParams += gnNbreRepas + RC 
-vWD_sParams.setValeur(vWD_sParams.opPlus(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opPlus("\r\n")));
-
-// sParams += HeureVersChaîne(ghHoraire1,"HHMM") + RC + gnRation1 + RC
-vWD_sParams.setValeur(vWD_sParams.opPlus(WDAPIDate.heureVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_ghHoraire1,"HHMM").opPlus("\r\n").opPlus(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation1).opPlus("\r\n")));
-
-// SI gnNbreRepas = 2 OU gnNbreRepas = 3 OU gnNbreRepas = 4 OU gnNbreRepas = 5 ALORS
-if((((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(2) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(3)) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(4)) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(5)))
-{
-// 	sParams += HeureVersChaîne(ghHoraire2,"HHMM") + RC + gnRation2 + RC
-vWD_sParams.setValeur(vWD_sParams.opPlus(WDAPIDate.heureVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_ghHoraire2,"HHMM").opPlus("\r\n").opPlus(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation2).opPlus("\r\n")));
-
-}
-
-// SI gnNbreRepas = 3 OU gnNbreRepas = 4 OU gnNbreRepas = 5 ALORS
-if(((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(3) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(4)) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(5)))
-{
-// 	sParams += HeureVersChaîne(ghHoraire3,"HHMM") + RC + gnRation3 + RC
-vWD_sParams.setValeur(vWD_sParams.opPlus(WDAPIDate.heureVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_ghHoraire3,"HHMM").opPlus("\r\n").opPlus(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation3).opPlus("\r\n")));
-
-}
-
-// SI gnNbreRepas = 4 OU gnNbreRepas = 5 ALORS
-if((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(4) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(5)))
-{
-// 	sParams += HeureVersChaîne(ghHoraire4,"HHMM") + RC + gnRation4 + RC
-vWD_sParams.setValeur(vWD_sParams.opPlus(WDAPIDate.heureVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_ghHoraire4,"HHMM").opPlus("\r\n").opPlus(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation4).opPlus("\r\n")));
-
-}
-
-// SI gnNbreRepas = 5 ALORS
-if(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(5))
-{
-// 	sParams += HeureVersChaîne(ghHoraire5,"HHMM") + RC + gnRation5 + RC
-vWD_sParams.setValeur(vWD_sParams.opPlus(WDAPIDate.heureVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_ghHoraire5,"HHMM").opPlus("\r\n").opPlus(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation5).opPlus("\r\n")));
-
-}
-
-// fSauveTexte("/storage/sdcard0/Download/FichierParamètres.txt",sParams)
-WDAPIFichier.fSauveTexte("/storage/sdcard0/Download/FichierParamètres.txt",vWD_sParams);
-
-}
-
-
-
-// Activation des écouteurs: 
-public void activerEcoute()
-{
-super.activerEcouteurClic();
-}
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des variables globales
-////////////////////////////////////////////////////////////////////////////
-}
-public GWDBTN_Enregistrer mWD_BTN_Enregistrer;
-
-/**
- * BTN_Envoyer
- */
-class GWDBTN_Envoyer extends WDBouton
-{
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°4 de FEN_RécapitulatifParamètres.BTN_Envoyer
-////////////////////////////////////////////////////////////////////////////
-public  void initialiserObjet()
-{
-super.initialiserObjet();
-super.setFenetre( getWDFenetreThis() );
-super.setQuid(2782699836406852933l);
-
-super.setChecksum("674207527");
-
-super.setNom("BTN_Envoyer");
-
-super.setType(4);
-
-super.setLibelle("Envoyer");
-
-super.setMenuContextuelSysteme();
-
-super.setNote("");
-
-super.setNavigable(true);
-
-super.setEtatInitial(0);
-
-super.setPositionInitiale(161, 382);
-
-super.setTailleInitiale(143, 48);
-
-super.setPlan(0);
-
-super.setImageEtat(1);
-
-super.setImageFondEtat(1);
-
-super.setTailleMin(0, 0);
-
-super.setTailleMax(2147483647, 2147483647);
-
-super.setVisibleInitial(true);
-
-super.setAltitude(4);
 
 super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
 
@@ -523,9 +357,143 @@ activerEcoute();
 super.terminerInitialisation();
 }
 
+/**
+ * Traitement: Clic sur BTN_Envoyer
+ */
+public void clicSurBoutonGauche()
+{
+super.clicSurBoutonGauche();
+
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables locales au traitement
+// (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
+////////////////////////////////////////////////////////////////////////////
+WDObjet vWD_sMonDoc= new WDChaineA();
+
+WDObjet vWD_sSourceXML= new WDChaineA();
+
+WDObjet vWD_bResEnregistre= new WDBooleen();
+
+WDObjet vWD_bResEnvoie= new WDBooleen();
+
+
+
+// sMonDoc est une chaîne ANSI = "TestXML"
+
+vWD_sMonDoc.setValeur("TestXML");
+
+
+// sSourceXML est une chaîne ANSI
+
+
+// bResEnregistre est un booléen
+
+
+// bResEnvoie est un booléen
+
+
+// bResEnregistre = XMLDocument(sMonDoc, "")
+vWD_bResEnregistre.setValeur(WDAPIXmlClassic.xmlDocument(vWD_sMonDoc.getString(),new WDChaineU("")));
+
+// SI bResEnregistre = Vrai ALORS
+if(vWD_bResEnregistre.opEgal(true))
+{
+// 	ToastAffiche("Document enregistré !")
+WDAPIToast.toastAffiche("Document enregistré !");
+
+}
+
+// XMLAjouteFils(sMonDoc,"LISTE_DE_REPAS","",Vrai)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"LISTE_DE_REPAS","",true);
+
+// XMLAjouteFils(sMonDoc,"NbreRepas",NumériqueVersChaîne(gnNbreRepas))
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"NbreRepas",WDAPINum.numeriqueVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas).getString());
+
+// XMLAjouteFils(sMonDoc,"Horaire1",HeureVersChaîne(ghHoraire1,"HHMM"))
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Horaire1",WDAPIDate.heureVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_ghHoraire1,"HHMM").getString());
+
+// XMLAjouteFils(sMonDoc,"Ration1",NumériqueVersChaîne(gnRation1))
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Ration1",WDAPINum.numeriqueVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation1).getString());
+
+// SI gnNbreRepas = 2 OU gnNbreRepas = 3 OU gnNbreRepas = 4 OU gnNbreRepas = 5 ALORS
+if((((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(2) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(3)) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(4)) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(5)))
+{
+// 	XMLAjouteFils(sMonDoc,"Horaire2",HeureVersChaîne(ghHoraire2,"HHMM"))
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Horaire2",WDAPIDate.heureVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_ghHoraire2,"HHMM").getString());
+
+// 	XMLAjouteFils(sMonDoc,"Ration2",NumériqueVersChaîne(gnRation2))
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Ration2",WDAPINum.numeriqueVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation2).getString());
+
+}
+
+// SI gnNbreRepas = 3 OU gnNbreRepas = 4 OU gnNbreRepas = 5 ALORS
+if(((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(3) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(4)) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(5)))
+{
+// 	XMLAjouteFils(sMonDoc,"Horaire3",HeureVersChaîne(ghHoraire3,"HHMM"))
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Horaire3",WDAPIDate.heureVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_ghHoraire3,"HHMM").getString());
+
+// 	XMLAjouteFils(sMonDoc,"Ration3",NumériqueVersChaîne(gnRation3))
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Ration3",WDAPINum.numeriqueVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation3).getString());
+
+}
+
+// SI gnNbreRepas = 4 OU gnNbreRepas = 5 ALORS
+if((GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(4) | GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(5)))
+{
+// 	XMLAjouteFils(sMonDoc,"Horaire4",HeureVersChaîne(ghHoraire4,"HHMM"))
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Horaire4",WDAPIDate.heureVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_ghHoraire4,"HHMM").getString());
+
+// 	XMLAjouteFils(sMonDoc,"Ration4",NumériqueVersChaîne(gnRation4))
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Ration4",WDAPINum.numeriqueVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation4).getString());
+
+}
+
+// SI gnNbreRepas = 5 ALORS
+if(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal(5))
+{
+// 	XMLAjouteFils(sMonDoc,"Horaire5",HeureVersChaîne(ghHoraire5,"HHMM"))
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Horaire5",WDAPIDate.heureVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_ghHoraire5,"HHMM").getString());
+
+// 	XMLAjouteFils(sMonDoc,"Ration5",NumériqueVersChaîne(gnRation5))
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Ration5",WDAPINum.numeriqueVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnRation5).getString());
+
+}
+
+// sSourceXML = XMLConstruitChaîne(sMonDoc)
+vWD_sSourceXML.setValeur(WDAPIXml.xmlConstruitChaine(vWD_sMonDoc));
+
+// XMLTermine(sMonDoc)
+WDAPIXmlClassic.xmlTermine(vWD_sMonDoc.getString());
+
+// fSauveTexte("/storage/sdcard0/Download/FichierParamètresXML.xml",Remplace(sSourceXML,"><",">"+RC+"<"))
+WDAPIFichier.fSauveTexte("/storage/sdcard0/Download/FichierParamètresXML.xml",WDAPIChaine.remplace(vWD_sSourceXML,new WDChaineU("><"),new WDChaineU(">\r\n<")));
+
+// bResEnvoie = CommunicationRaspberry::EnvoyerFichier()
+vWD_bResEnvoie.setValeur(GWDCCommunicationRaspberry.fWD_envoyerFichier());
+
+// SI bResEnvoie = Vrai ALORS
+if(vWD_bResEnvoie.opEgal(true))
+{
+// 	ToastAffiche("Fichier envoyé !")
+WDAPIToast.toastAffiche("Fichier envoyé !");
+
+}
+else
+{
+// 	Info("Echec de l'envoie du fichier !")
+WDAPIDialogue.info("Echec de l'envoie du fichier !");
+
+}
+
+}
+
+
+
 // Activation des écouteurs: 
 public void activerEcoute()
 {
+super.activerEcouteurClic();
 }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -580,7 +548,6 @@ protected void creerChamps()
 {
 mWD_LIB_RecapParams = new GWDLIB_RecapParams();
 mWD_SAI_RecapParams = new GWDSAI_RecapParams();
-mWD_BTN_Enregistrer = new GWDBTN_Enregistrer();
 mWD_BTN_Envoyer = new GWDBTN_Envoyer();
 
 }
@@ -635,8 +602,6 @@ mWD_LIB_RecapParams.initialiserObjet();
 super.ajouter("LIB_RecapParams", mWD_LIB_RecapParams);
 mWD_SAI_RecapParams.initialiserObjet();
 super.ajouter("SAI_RecapParams", mWD_SAI_RecapParams);
-mWD_BTN_Enregistrer.initialiserObjet();
-super.ajouter("BTN_Enregistrer", mWD_BTN_Enregistrer);
 mWD_BTN_Envoyer.initialiserObjet();
 super.ajouter("BTN_Envoyer", mWD_BTN_Envoyer);
 

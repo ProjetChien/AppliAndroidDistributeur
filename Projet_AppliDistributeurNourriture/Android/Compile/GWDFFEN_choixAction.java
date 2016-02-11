@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Fenêtre
  * Classe Android : FEN_choixAction
- * Date : 29/01/2016 09:28:06
+ * Date : 11/02/2016 15:03:09
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -32,13 +32,13 @@ public class GWDFFEN_choixAction extends WDFenetre
 ////////////////////////////////////////////////////////////////////////////
 
 /**
- * BTN_Paramètres
+ * BTN_Programmer_des_repas
  */
-class GWDBTN_Parametres extends WDBouton
+class GWDBTN_Programmer_des_repas extends WDBouton
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°1 de FEN_choixAction.BTN_Paramètres
+// Déclaration des champs du fils n°1 de FEN_choixAction.BTN_Programmer_des_repas
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
@@ -48,11 +48,11 @@ super.setQuid(2782376296526019260l);
 
 super.setChecksum("679706204");
 
-super.setNom("BTN_Paramètres");
+super.setNom("BTN_Programmer_des_repas");
 
 super.setType(4);
 
-super.setLibelle("Paramètres");
+super.setLibelle("Programmer des repas");
 
 super.setMenuContextuelSysteme();
 
@@ -62,9 +62,9 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(40, 90);
+super.setPositionInitiale(37, 63);
 
-super.setTailleInitiale(160, 48);
+super.setTailleInitiale(244, 70);
 
 super.setPlan(0);
 
@@ -119,7 +119,7 @@ super.terminerInitialisation();
 }
 
 /**
- * Traitement: Clic sur BTN_Paramètres
+ * Traitement: Clic sur BTN_Programmer_des_repas
  */
 public void clicSurBoutonGauche()
 {
@@ -142,7 +142,7 @@ super.activerEcouteurClic();
 // Déclaration des variables globales
 ////////////////////////////////////////////////////////////////////////////
 }
-public GWDBTN_Parametres mWD_BTN_Parametres;
+public GWDBTN_Programmer_des_repas mWD_BTN_Programmer_des_repas;
 
 /**
  * BTN_RationsMtn
@@ -165,7 +165,7 @@ super.setNom("BTN_RationsMtn");
 
 super.setType(4);
 
-super.setLibelle("Envoie");
+super.setLibelle("Envoie direct de ration(s)");
 
 super.setMenuContextuelSysteme();
 
@@ -175,9 +175,9 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(40, 196);
+super.setPositionInitiale(37, 161);
 
-super.setTailleInitiale(116, 48);
+super.setTailleInitiale(137, 103);
 
 super.setPlan(0);
 
@@ -243,87 +243,13 @@ public void activerEcoute()
 public GWDBTN_RationsMtn mWD_BTN_RationsMtn;
 
 /**
- * LIB_EnvoieRation
- */
-class GWDLIB_EnvoieRation extends WDLibelle
-{
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°3 de FEN_choixAction.LIB_EnvoieRation
-////////////////////////////////////////////////////////////////////////////
-public  void initialiserObjet()
-{
-super.initialiserObjet();
-super.setFenetre( getWDFenetreThis() );
-super.setQuid(2782376906412500028l);
-
-super.setChecksum("680830626");
-
-super.setNom("LIB_EnvoieRation");
-
-super.setType(3);
-
-super.setTypeSaisie(0);
-
-super.setMasqueSaisie(new WDChaineU("0"));
-
-super.setLibelle("Envoie direct de ration(s) :");
-
-super.setNote("");
-
-super.setEtatInitial(0);
-
-super.setPositionInitiale(40, 162);
-
-super.setTailleInitiale(219, 32);
-
-super.setPlan(0);
-
-super.setCadrageHorizontal(0);
-
-super.setCadrageVertical(0);
-
-super.setTailleMin(0, 0);
-
-super.setTailleMax(2147483647, 2147483647);
-
-super.setVisibleInitial(true);
-
-super.setAltitude(3);
-
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
-
-super.setEllipse(0);
-
-super.setPresenceLibelle(true);
-
-super.setStyleLibelle(0xFFFFFF, 0xFFFFFFFF, creerPolice("MS Shell Dlg", -9.000000, 0), 3);
-
-super.setCadreExterieur(1, 0xFFFFFFFF, 0xE0E0E0, 0x808080, 4, 4);
-
-activerEcoute();
-super.terminerInitialisation();
-}
-
-// Activation des écouteurs: 
-public void activerEcoute()
-{
-}
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des variables globales
-////////////////////////////////////////////////////////////////////////////
-}
-public GWDLIB_EnvoieRation mWD_LIB_EnvoieRation;
-
-/**
  * LIB_ChoixAction
  */
 class GWDLIB_ChoixAction extends WDLibelle
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°4 de FEN_choixAction.LIB_ChoixAction
+// Déclaration des champs du fils n°3 de FEN_choixAction.LIB_ChoixAction
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
@@ -363,7 +289,7 @@ super.setTailleMax(2147483647, 2147483647);
 
 super.setVisibleInitial(true);
 
-super.setAltitude(4);
+super.setAltitude(3);
 
 super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
 
@@ -397,14 +323,14 @@ class GWDCOMBO_RationActuel extends WDCombo
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°5 de FEN_choixAction.COMBO_RationActuel
+// Déclaration des champs du fils n°4 de FEN_choixAction.COMBO_RationActuel
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
 super.initialiserObjet();
 super.setFenetre( getWDFenetreThis() );
-super.setRectLibelle(0,2,4,44);
-super.setRectCompPrincipal(4,2,100,44);
+super.setRectLibelle(0,2,2,44);
+super.setRectCompPrincipal(2,2,64,44);
 super.setNom("COMBO_RationActuel");
 
 super.setType(10002);
@@ -419,9 +345,9 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(169, 196);
+super.setPositionInitiale(211, 194);
 
-super.setTailleInitiale(104, 48);
+super.setTailleInitiale(66, 48);
 
 super.setValeurInitiale("");
 
@@ -439,7 +365,7 @@ super.setTailleMax(2147483647, 2147483647);
 
 super.setVisibleInitial(true);
 
-super.setAltitude(5);
+super.setAltitude(4);
 
 super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
 
@@ -479,13 +405,13 @@ public void activerEcoute()
 public GWDCOMBO_RationActuel mWD_COMBO_RationActuel;
 
 /**
- * BTN_Logs
+ * BTN_Consulter_l_historique
  */
-class GWDBTN_Logs extends WDBouton
+class GWDBTN_Consulter_l_historique extends WDBouton
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°6 de FEN_choixAction.BTN_Logs
+// Déclaration des champs du fils n°5 de FEN_choixAction.BTN_Consulter_l_historique
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
@@ -495,11 +421,11 @@ super.setQuid(2782676304271627187l);
 
 super.setChecksum("664791086");
 
-super.setNom("BTN_Logs");
+super.setNom("BTN_Consulter_l_historique");
 
 super.setType(4);
 
-super.setLibelle("Logs");
+super.setLibelle("Consulter l'historique");
 
 super.setMenuContextuelSysteme();
 
@@ -511,7 +437,7 @@ super.setEtatInitial(0);
 
 super.setPositionInitiale(40, 400);
 
-super.setTailleInitiale(160, 48);
+super.setTailleInitiale(241, 69);
 
 super.setPlan(0);
 
@@ -525,7 +451,7 @@ super.setTailleMax(2147483647, 2147483647);
 
 super.setVisibleInitial(true);
 
-super.setAltitude(6);
+super.setAltitude(5);
 
 super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
 
@@ -574,164 +500,16 @@ public void activerEcoute()
 // Déclaration des variables globales
 ////////////////////////////////////////////////////////////////////////////
 }
-public GWDBTN_Logs mWD_BTN_Logs;
+public GWDBTN_Consulter_l_historique mWD_BTN_Consulter_l_historique;
 
 /**
- * LIB_Consulter_les_logs
+ * BTN_Appeler_votre_animal_de_compagnie
  */
-class GWDLIB_Consulter_les_logs extends WDLibelle
+class GWDBTN_Appeler_votre_animal_de_compagnie extends WDBouton
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°7 de FEN_choixAction.LIB_Consulter_les_logs
-////////////////////////////////////////////////////////////////////////////
-public  void initialiserObjet()
-{
-super.initialiserObjet();
-super.setFenetre( getWDFenetreThis() );
-super.setQuid(2782676377286809369l);
-
-super.setChecksum("665528797");
-
-super.setNom("LIB_Consulter_les_logs");
-
-super.setType(3);
-
-super.setTypeSaisie(0);
-
-super.setMasqueSaisie(new WDChaineU("0"));
-
-super.setLibelle("Consulter les logs :");
-
-super.setNote("");
-
-super.setEtatInitial(0);
-
-super.setPositionInitiale(40, 366);
-
-super.setTailleInitiale(160, 32);
-
-super.setPlan(0);
-
-super.setCadrageHorizontal(0);
-
-super.setCadrageVertical(0);
-
-super.setTailleMin(0, 0);
-
-super.setTailleMax(2147483647, 2147483647);
-
-super.setVisibleInitial(true);
-
-super.setAltitude(7);
-
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
-
-super.setEllipse(0);
-
-super.setPresenceLibelle(true);
-
-super.setStyleLibelle(0xFFFFFF, 0xFFFFFFFF, creerPolice("MS Shell Dlg", -9.000000, 0), 3);
-
-super.setCadreExterieur(1, 0xFFFFFFFF, 0xE0E0E0, 0x808080, 4, 4);
-
-activerEcoute();
-super.terminerInitialisation();
-}
-
-// Activation des écouteurs: 
-public void activerEcoute()
-{
-}
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des variables globales
-////////////////////////////////////////////////////////////////////////////
-}
-public GWDLIB_Consulter_les_logs mWD_LIB_Consulter_les_logs;
-
-/**
- * LIB_paramètres
- */
-class GWDLIB_parametres extends WDLibelle
-{
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°8 de FEN_choixAction.LIB_paramètres
-////////////////////////////////////////////////////////////////////////////
-public  void initialiserObjet()
-{
-super.initialiserObjet();
-super.setFenetre( getWDFenetreThis() );
-super.setQuid(2782676682233031508l);
-
-super.setChecksum("669072991");
-
-super.setNom("LIB_paramètres");
-
-super.setType(3);
-
-super.setTypeSaisie(0);
-
-super.setMasqueSaisie(new WDChaineU("0"));
-
-super.setLibelle("Rentrer des paramètres :");
-
-super.setNote("");
-
-super.setEtatInitial(0);
-
-super.setPositionInitiale(40, 56);
-
-super.setTailleInitiale(204, 32);
-
-super.setPlan(0);
-
-super.setCadrageHorizontal(0);
-
-super.setCadrageVertical(0);
-
-super.setTailleMin(0, 0);
-
-super.setTailleMax(2147483647, 2147483647);
-
-super.setVisibleInitial(true);
-
-super.setAltitude(8);
-
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
-
-super.setEllipse(0);
-
-super.setPresenceLibelle(true);
-
-super.setStyleLibelle(0xFFFFFF, 0xFFFFFFFF, creerPolice("MS Shell Dlg", -9.000000, 0), 3);
-
-super.setCadreExterieur(1, 0xFFFFFFFF, 0xE0E0E0, 0x808080, 4, 4);
-
-activerEcoute();
-super.terminerInitialisation();
-}
-
-// Activation des écouteurs: 
-public void activerEcoute()
-{
-}
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des variables globales
-////////////////////////////////////////////////////////////////////////////
-}
-public GWDLIB_parametres mWD_LIB_parametres;
-
-/**
- * BTN_Appeler
- */
-class GWDBTN_Appeler extends WDBouton
-{
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°9 de FEN_choixAction.BTN_Appeler
+// Déclaration des champs du fils n°6 de FEN_choixAction.BTN_Appeler_votre_animal_de_compagnie
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
@@ -741,11 +519,11 @@ super.setQuid(2782677064486783011l);
 
 super.setChecksum("670735695");
 
-super.setNom("BTN_Appeler");
+super.setNom("BTN_Appeler_votre_animal_de_compagnie");
 
 super.setType(4);
 
-super.setLibelle("Appeler");
+super.setLibelle("Appeler votre animal de compagnie");
 
 super.setMenuContextuelSysteme();
 
@@ -757,7 +535,7 @@ super.setEtatInitial(0);
 
 super.setPositionInitiale(40, 300);
 
-super.setTailleInitiale(160, 48);
+super.setTailleInitiale(241, 73);
 
 super.setPlan(0);
 
@@ -771,7 +549,7 @@ super.setTailleMax(2147483647, 2147483647);
 
 super.setVisibleInitial(true);
 
-super.setAltitude(9);
+super.setAltitude(6);
 
 super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
 
@@ -820,81 +598,7 @@ public void activerEcoute()
 // Déclaration des variables globales
 ////////////////////////////////////////////////////////////////////////////
 }
-public GWDBTN_Appeler mWD_BTN_Appeler;
-
-/**
- * LIB_Appeler
- */
-class GWDLIB_Appeler extends WDLibelle
-{
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°10 de FEN_choixAction.LIB_Appeler
-////////////////////////////////////////////////////////////////////////////
-public  void initialiserObjet()
-{
-super.initialiserObjet();
-super.setFenetre( getWDFenetreThis() );
-super.setQuid(2782677330774948259l);
-
-super.setChecksum("670928197");
-
-super.setNom("LIB_Appeler");
-
-super.setType(3);
-
-super.setTypeSaisie(0);
-
-super.setMasqueSaisie(new WDChaineU("0"));
-
-super.setLibelle("Appeler l'animal :");
-
-super.setNote("");
-
-super.setEtatInitial(0);
-
-super.setPositionInitiale(40, 266);
-
-super.setTailleInitiale(148, 32);
-
-super.setPlan(0);
-
-super.setCadrageHorizontal(0);
-
-super.setCadrageVertical(0);
-
-super.setTailleMin(0, 0);
-
-super.setTailleMax(2147483647, 2147483647);
-
-super.setVisibleInitial(true);
-
-super.setAltitude(10);
-
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
-
-super.setEllipse(0);
-
-super.setPresenceLibelle(true);
-
-super.setStyleLibelle(0xFFFFFF, 0xFFFFFFFF, creerPolice("MS Shell Dlg", -9.000000, 0), 3);
-
-super.setCadreExterieur(1, 0xFFFFFFFF, 0xE0E0E0, 0x808080, 4, 4);
-
-activerEcoute();
-super.terminerInitialisation();
-}
-
-// Activation des écouteurs: 
-public void activerEcoute()
-{
-}
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des variables globales
-////////////////////////////////////////////////////////////////////////////
-}
-public GWDLIB_Appeler mWD_LIB_Appeler;
+public GWDBTN_Appeler_votre_animal_de_compagnie mWD_BTN_Appeler_votre_animal_de_compagnie;
 
 /**
  * Traitement: Déclarations globales de FEN_choixAction
@@ -923,16 +627,12 @@ public void activerEcoute()
 ////////////////////////////////////////////////////////////////////////////
 protected void creerChamps()
 {
-mWD_BTN_Parametres = new GWDBTN_Parametres();
+mWD_BTN_Programmer_des_repas = new GWDBTN_Programmer_des_repas();
 mWD_BTN_RationsMtn = new GWDBTN_RationsMtn();
-mWD_LIB_EnvoieRation = new GWDLIB_EnvoieRation();
 mWD_LIB_ChoixAction = new GWDLIB_ChoixAction();
 mWD_COMBO_RationActuel = new GWDCOMBO_RationActuel();
-mWD_BTN_Logs = new GWDBTN_Logs();
-mWD_LIB_Consulter_les_logs = new GWDLIB_Consulter_les_logs();
-mWD_LIB_parametres = new GWDLIB_parametres();
-mWD_BTN_Appeler = new GWDBTN_Appeler();
-mWD_LIB_Appeler = new GWDLIB_Appeler();
+mWD_BTN_Consulter_l_historique = new GWDBTN_Consulter_l_historique();
+mWD_BTN_Appeler_votre_animal_de_compagnie = new GWDBTN_Appeler_votre_animal_de_compagnie();
 
 }
 ////////////////////////////////////////////////////////////////////////////
@@ -982,26 +682,18 @@ activerEcoute();
 ////////////////////////////////////////////////////////////////////////////
 // Initialisation des champs de FEN_choixAction
 ////////////////////////////////////////////////////////////////////////////
-mWD_BTN_Parametres.initialiserObjet();
-super.ajouter("BTN_Paramètres", mWD_BTN_Parametres);
+mWD_BTN_Programmer_des_repas.initialiserObjet();
+super.ajouter("BTN_Programmer_des_repas", mWD_BTN_Programmer_des_repas);
 mWD_BTN_RationsMtn.initialiserObjet();
 super.ajouter("BTN_RationsMtn", mWD_BTN_RationsMtn);
-mWD_LIB_EnvoieRation.initialiserObjet();
-super.ajouter("LIB_EnvoieRation", mWD_LIB_EnvoieRation);
 mWD_LIB_ChoixAction.initialiserObjet();
 super.ajouter("LIB_ChoixAction", mWD_LIB_ChoixAction);
 mWD_COMBO_RationActuel.initialiserObjet();
 super.ajouter("COMBO_RationActuel", mWD_COMBO_RationActuel);
-mWD_BTN_Logs.initialiserObjet();
-super.ajouter("BTN_Logs", mWD_BTN_Logs);
-mWD_LIB_Consulter_les_logs.initialiserObjet();
-super.ajouter("LIB_Consulter_les_logs", mWD_LIB_Consulter_les_logs);
-mWD_LIB_parametres.initialiserObjet();
-super.ajouter("LIB_paramètres", mWD_LIB_parametres);
-mWD_BTN_Appeler.initialiserObjet();
-super.ajouter("BTN_Appeler", mWD_BTN_Appeler);
-mWD_LIB_Appeler.initialiserObjet();
-super.ajouter("LIB_Appeler", mWD_LIB_Appeler);
+mWD_BTN_Consulter_l_historique.initialiserObjet();
+super.ajouter("BTN_Consulter_l_historique", mWD_BTN_Consulter_l_historique);
+mWD_BTN_Appeler_votre_animal_de_compagnie.initialiserObjet();
+super.ajouter("BTN_Appeler_votre_animal_de_compagnie", mWD_BTN_Appeler_votre_animal_de_compagnie);
 
 super.terminerInitialisation();
 }
