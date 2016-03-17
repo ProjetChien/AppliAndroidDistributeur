@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Fenêtre
  * Classe Android : FEN_RécapitulatifParamètres
- * Date : 11/02/2016 15:47:15
+ * Date : 11/03/2016 09:40:30
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -377,11 +377,17 @@ WDObjet vWD_bResEnregistre= new WDBooleen();
 
 WDObjet vWD_bResEnvoie= new WDBooleen();
 
+WDObjet vWD_sCheminFichier= new WDChaineU();
+
+WDObjet vWD_dDateMtn = new WDDate();
+
+WDObjet vWD_hHeureMtn = new WDHeure();
 
 
-// sMonDoc est une chaîne ANSI = "TestXML"
 
-vWD_sMonDoc.setValeur("TestXML");
+// sMonDoc est une chaîne ANSI = "FichierXML"
+
+vWD_sMonDoc.setValeur("FichierXML");
 
 
 // sSourceXML est une chaîne ANSI
@@ -391,6 +397,21 @@ vWD_sMonDoc.setValeur("TestXML");
 
 
 // bResEnvoie est un booléen
+
+
+// sCheminFichier est une chaîne = "/storage/sdcard0/Download/FichierParamètresXML.xml"
+
+vWD_sCheminFichier.setValeur("/storage/sdcard0/Download/FichierParamètresXML.xml");
+
+
+// dDateMtn est une Date = DateVersChaîne(DateSys(),"JJ/MM/AA")
+
+vWD_dDateMtn.setValeur(WDAPIDate.dateVersChaine(WDAPIDate.dateSys(),"JJ/MM/AA"));
+
+
+// hHeureMtn est une Heure = HeureVersChaîne(HeureSys(), "HH:MM")
+
+vWD_hHeureMtn.setValeur(WDAPIDate.heureVersChaine(WDAPIDate.heureSys(),"HH:MM"));
 
 
 // bResEnregistre = XMLDocument(sMonDoc, "")
@@ -403,6 +424,24 @@ if(vWD_bResEnregistre.opEgal(true))
 WDAPIToast.toastAffiche("Document enregistré !");
 
 }
+
+// XMLAjouteFils(sMonDoc,"PARAMETRES","",Vrai)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"PARAMETRES","",true);
+
+// XMLParent(sMonDoc)
+WDAPIXmlClassic.XMLParent(vWD_sMonDoc.getString());
+
+// XMLAjouteFils(sMonDoc,"DATE_MODIF","",Vrai)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"DATE_MODIF","",true);
+
+// XMLAjouteFils(sMonDoc,"Date",dDateMtn)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Date",vWD_dDateMtn.getString());
+
+// XMLAjouteFils(sMonDoc,"Heure",hHeureMtn)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Heure",vWD_hHeureMtn.getString());
+
+// XMLParent(sMonDoc)
+WDAPIXmlClassic.XMLParent(vWD_sMonDoc.getString());
 
 // XMLAjouteFils(sMonDoc,"LISTE_DE_REPAS","",Vrai)
 WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"LISTE_DE_REPAS","",true);
@@ -466,11 +505,11 @@ vWD_sSourceXML.setValeur(WDAPIXml.xmlConstruitChaine(vWD_sMonDoc));
 // XMLTermine(sMonDoc)
 WDAPIXmlClassic.xmlTermine(vWD_sMonDoc.getString());
 
-// fSauveTexte("/storage/sdcard0/Download/FichierParamètresXML.xml",Remplace(sSourceXML,"><",">"+RC+"<"))
-WDAPIFichier.fSauveTexte("/storage/sdcard0/Download/FichierParamètresXML.xml",WDAPIChaine.remplace(vWD_sSourceXML,new WDChaineU("><"),new WDChaineU(">\r\n<")));
+// fSauveTexte(sCheminFichier,Remplace(sSourceXML,"><",">"+RC+"<"))
+WDAPIFichier.fSauveTexte(vWD_sCheminFichier.getString(),WDAPIChaine.remplace(vWD_sSourceXML,new WDChaineU("><"),new WDChaineU(">\r\n<")));
 
-// bResEnvoie = CommunicationRaspberry::EnvoyerFichier()
-vWD_bResEnvoie.setValeur(GWDCCommunicationRaspberry.fWD_envoyerFichier());
+// bResEnvoie = CommunicationRaspberry::EnvoyerFichier(sCheminFichier)
+vWD_bResEnvoie.setValeur(GWDCCommunicationRaspberry.fWD_envoyerFichier(vWD_sCheminFichier));
 
 // SI bResEnvoie = Vrai ALORS
 if(vWD_bResEnvoie.opEgal(true))

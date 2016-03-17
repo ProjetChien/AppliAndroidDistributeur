@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Fenêtre
  * Classe Android : FEN_Connexion
- * Date : 11/02/2016 15:03:09
+ * Date : 10/03/2016 14:11:12
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -129,7 +129,7 @@ super.setTypeSaisie(0);
 
 super.setMasqueSaisie(new WDChaineU("0"));
 
-super.setLibelle("Adresse IP de la box internet :");
+super.setLibelle("Adresse IP du raspberry :");
 
 super.setNote("");
 
@@ -386,22 +386,11 @@ public void clicSurBoutonGauche()
 {
 super.clicSurBoutonGauche();
 
+// gsIP = SAI_AdresseIP
+GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gsIP.setValeur(mWD_SAI_AdresseIP);
 
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des variables locales au traitement
-// (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
-////////////////////////////////////////////////////////////////////////////
-WDObjet vWD_IP= new WDChaineU();
-
-
-
-// IP est une chaîne = SAI_AdresseIP
-
-vWD_IP.setValeur(mWD_SAI_AdresseIP);
-
-
-// CommunicationRaspberry::Connexion(IP)
-GWDCCommunicationRaspberry.fWD_connexion(vWD_IP);
+// CommunicationRaspberry::Connexion(gsIP)
+GWDCCommunicationRaspberry.fWD_connexion(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gsIP);
 
 }
 

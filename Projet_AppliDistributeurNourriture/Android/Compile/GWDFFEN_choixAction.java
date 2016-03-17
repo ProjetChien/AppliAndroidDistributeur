@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Fenêtre
  * Classe Android : FEN_choixAction
- * Date : 11/02/2016 15:03:09
+ * Date : 17/03/2016 14:10:27
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -231,9 +231,145 @@ activerEcoute();
 super.terminerInitialisation();
 }
 
+/**
+ * Traitement: Clic sur BTN_RationsMtn
+ */
+public void clicSurBoutonGauche()
+{
+super.clicSurBoutonGauche();
+
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables locales au traitement
+// (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
+////////////////////////////////////////////////////////////////////////////
+WDObjet vWD_nNbreRationMtn= new WDEntier();
+
+WDObjet vWD_sMonDocIm= new WDChaineA();
+
+WDObjet vWD_sSourceImXML= new WDChaineA();
+
+WDObjet vWD_bResEnregistreIm= new WDBooleen();
+
+WDObjet vWD_bResEnvoieIm= new WDBooleen();
+
+WDObjet vWD_dDateMtn = new WDDate();
+
+WDObjet vWD_hHeureMtn = new WDHeure();
+
+WDObjet vWD_sCheminFichier= new WDChaineU();
+
+
+
+// nNbreRationMtn est un entier = COMBO_RationActuel
+
+vWD_nNbreRationMtn.setValeur(mWD_COMBO_RationActuel);
+
+
+// sMonDocIm est une chaîne ANSI = "FichierXML"
+
+vWD_sMonDocIm.setValeur("FichierXML");
+
+
+// sSourceImXML est une chaîne ANSI
+
+
+// bResEnregistreIm est un booléen
+
+
+// bResEnvoieIm est un booléen
+
+
+// dDateMtn est une Date = DateVersChaîne(DateSys(), "JJ/MM/AA")
+
+vWD_dDateMtn.setValeur(WDAPIDate.dateVersChaine(WDAPIDate.dateSys(),"JJ/MM/AA"));
+
+
+// hHeureMtn est une Heure = HeureVersChaîne(HeureSys(), "HH:MM")
+
+vWD_hHeureMtn.setValeur(WDAPIDate.heureVersChaine(WDAPIDate.heureSys(),"HH:MM"));
+
+
+// sCheminFichier est une chaîne = "/storage/sdcard0/Download/FichierRationIm.xml"
+
+vWD_sCheminFichier.setValeur("/storage/sdcard0/Download/FichierRationIm.xml");
+
+
+// bResEnregistreIm = XMLDocument(sMonDocIm, "")
+vWD_bResEnregistreIm.setValeur(WDAPIXmlClassic.xmlDocument(vWD_sMonDocIm.getString(),new WDChaineU("")));
+
+// SI bResEnregistreIm = Vrai ALORS
+if(vWD_bResEnregistreIm.opEgal(true))
+{
+// 	ToastAffiche("Document enregistré !")
+WDAPIToast.toastAffiche("Document enregistré !");
+
+}
+
+// XMLAjouteFils(sMonDocIm,"PARAMETRES","",Vrai)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"PARAMETRES","",true);
+
+// XMLParent(sMonDocIm)
+WDAPIXmlClassic.XMLParent(vWD_sMonDocIm.getString());
+
+// XMLAjouteFils(sMonDocIm,"DATE_MODIF","",Vrai)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"DATE_MODIF","",true);
+
+// XMLAjouteFils(sMonDocIm,"Date",dDateMtn)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"Date",vWD_dDateMtn.getString());
+
+// XMLAjouteFils(sMonDocIm,"Heure",hHeureMtn)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"Heure",vWD_hHeureMtn.getString());
+
+// XMLParent(sMonDocIm)
+WDAPIXmlClassic.XMLParent(vWD_sMonDocIm.getString());
+
+// XMLAjouteFils(sMonDocIm,"RATION_IMMEDIATE","",Vrai)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"RATION_IMMEDIATE","",true);
+
+// XMLAjouteFils(sMonDocIm,"NbreRation",NumériqueVersChaîne(nNbreRationMtn))
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"NbreRation",WDAPINum.numeriqueVersChaine(vWD_nNbreRationMtn).getString());
+
+// sSourceImXML = XMLConstruitChaîne(sMonDocIm)
+vWD_sSourceImXML.setValeur(WDAPIXml.xmlConstruitChaine(vWD_sMonDocIm));
+
+// XMLTermine(sMonDocIm)
+WDAPIXmlClassic.xmlTermine(vWD_sMonDocIm.getString());
+
+// fSauveTexte(sCheminFichier,Remplace(sSourceImXML,"><",">"+RC+"<"))
+WDAPIFichier.fSauveTexte(vWD_sCheminFichier.getString(),WDAPIChaine.remplace(vWD_sSourceImXML,new WDChaineU("><"),new WDChaineU(">\r\n<")));
+
+// bResEnvoieIm = CommunicationRaspberry::EnvoyerFichier(sCheminFichier)
+vWD_bResEnvoieIm.setValeur(GWDCCommunicationRaspberry.fWD_envoyerFichier(vWD_sCheminFichier));
+
+// BTN_RationsMtn..Etat = Grisé
+this.setEtat(4);
+
+// SI bResEnvoieIm = Vrai ALORS
+if(vWD_bResEnvoieIm.opEgal(true))
+{
+// 	ToastAffiche("Fichier envoyé !")
+WDAPIToast.toastAffiche("Fichier envoyé !");
+
+// 	BTN_RationsMtn..Etat = Actif
+this.setEtat(0);
+
+}
+else
+{
+// 	Info("Echec de l'envoie du fichier !")
+WDAPIDialogue.info("Echec de l'envoie du fichier !");
+
+}
+
+}
+
+
+
 // Activation des écouteurs: 
 public void activerEcoute()
 {
+super.activerEcouteurClic();
 }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -491,9 +627,24 @@ activerEcoute();
 super.terminerInitialisation();
 }
 
+/**
+ * Traitement: Clic sur BTN_Consulter_l_historique
+ */
+public void clicSurBoutonGauche()
+{
+super.clicSurBoutonGauche();
+
+// OuvreFenêtreMobile(FEN_Historique)
+WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_Historique);
+
+}
+
+
+
 // Activation des écouteurs: 
 public void activerEcoute()
 {
+super.activerEcouteurClic();
 }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -589,9 +740,24 @@ activerEcoute();
 super.terminerInitialisation();
 }
 
+/**
+ * Traitement: Clic sur BTN_Appeler_votre_animal_de_compagnie
+ */
+public void clicSurBoutonGauche()
+{
+super.clicSurBoutonGauche();
+
+// OuvreFenêtreMobile(FEN_Appel)
+WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_Appel);
+
+}
+
+
+
 // Activation des écouteurs: 
 public void activerEcoute()
 {
+super.activerEcouteurClic();
 }
 
 ////////////////////////////////////////////////////////////////////////////

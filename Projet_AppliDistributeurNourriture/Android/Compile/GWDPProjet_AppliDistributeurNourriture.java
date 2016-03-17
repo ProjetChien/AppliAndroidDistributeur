@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Projet
  * Classe Android : Projet_AppliDistributeurNourriture
- * Date : 11/02/2016 15:47:15
+ * Date : 17/03/2016 14:10:46
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -66,6 +66,24 @@ mWD_FEN_choixAction.verifierOuverte();
 return mWD_FEN_choixAction;
 }
 
+ // FEN_Historique
+public GWDFFEN_Historique mWD_FEN_Historique = new GWDFFEN_Historique();
+ // accesseur de FEN_Historique
+public GWDFFEN_Historique getFEN_Historique()
+{
+mWD_FEN_Historique.verifierOuverte();
+return mWD_FEN_Historique;
+}
+
+ // FEN_Appel
+public GWDFFEN_Appel mWD_FEN_Appel = new GWDFFEN_Appel();
+ // accesseur de FEN_Appel
+public GWDFFEN_Appel getFEN_Appel()
+{
+mWD_FEN_Appel.verifierOuverte();
+return mWD_FEN_Appel;
+}
+
 
  // Constructeur de la classe GWDPProjet_AppliDistributeurNourriture
 public GWDPProjet_AppliDistributeurNourriture()
@@ -74,6 +92,8 @@ ajouterFenetre("FEN_Connexion", mWD_FEN_Connexion);
 ajouterFenetre("FEN_Paramètres", mWD_FEN_Parametres);
 ajouterFenetre("FEN_RécapitulatifParamètres", mWD_FEN_RecapitulatifParametres);
 ajouterFenetre("FEN_choixAction", mWD_FEN_choixAction);
+ajouterFenetre("FEN_Historique", mWD_FEN_Historique);
+ajouterFenetre("FEN_Appel", mWD_FEN_Appel);
 
 }
 
@@ -157,6 +177,13 @@ super.ajouterVariableGlobale("gnRation5",vWD_gnRation5);
 
 
 
+// gsIP est une chaîne
+vWD_gsIP= new WDChaineU();
+
+super.ajouterVariableGlobale("gsIP",vWD_gsIP);
+
+
+
 }
 
 
@@ -176,6 +203,7 @@ static public WDObjet vWD_gnRation2 = WDVarNonAllouee.ref;
 static public WDObjet vWD_gnRation3 = WDVarNonAllouee.ref;
 static public WDObjet vWD_gnRation4 = WDVarNonAllouee.ref;
 static public WDObjet vWD_gnRation5 = WDVarNonAllouee.ref;
+static public WDObjet vWD_gsIP = WDVarNonAllouee.ref;
 static
 {
 // Allocation de l'objet global
@@ -185,7 +213,7 @@ GWDPProjet_AppliDistributeurNourriture.ms_Project = new GWDPProjet_AppliDistribu
 GWDPProjet_AppliDistributeurNourriture.ms_Project.setLangueProjet(new int[] {1}, new int[] {0}, 1);
 GWDPProjet_AppliDistributeurNourriture.ms_Project.setNomCollectionProcedure(new String[]{});
 }
-public String getVersionApplication(){ return "0.0.77.0";}
+public String getVersionApplication(){ return "0.0.143.0";}
 public String getNomAPK(){ return "Distributeur";}
 public int getIdNomApplication(){return com.masociete.projet_applidistributeurnourriture.R.string.app_name;}
 public boolean isModeAnsi(){ return false;}
@@ -213,12 +241,14 @@ return false;
 }
 protected void declarerRessources()
 {
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_5_np3_1_223_1_180, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\POUB.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.poub_4_selector, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\PLUS.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.plus_3_selector, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_2_np3_1_223_1_180, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_2_np3_1_223_1_180, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_2_np3_1_223_1_180, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\POUB.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.poub_5_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\PLUS.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.plus_4_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_3_np3_1_223_1_180, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_3_np3_1_223_1_180, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_3_np3_1_223_1_180, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_3_np3_1_223_1_180, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_2_np3_1_223_1_180, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_2_np3_1_223_1_180, "");
 }
 
 ////////////////////////////////////////////////////////////////////////////
