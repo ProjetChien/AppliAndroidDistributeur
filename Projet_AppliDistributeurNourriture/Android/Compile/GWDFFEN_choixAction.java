@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Fenêtre
  * Classe Android : FEN_choixAction
- * Date : 17/03/2016 14:10:27
+ * Date : 07/04/2016 14:40:13
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -32,27 +32,27 @@ public class GWDFFEN_choixAction extends WDFenetre
 ////////////////////////////////////////////////////////////////////////////
 
 /**
- * BTN_Programmer_des_repas
+ * BTN_RationsMtn
  */
-class GWDBTN_Programmer_des_repas extends WDBouton
+class GWDBTN_RationsMtn extends WDBouton
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°1 de FEN_choixAction.BTN_Programmer_des_repas
+// Déclaration des champs du fils n°1 de FEN_choixAction.BTN_RationsMtn
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
 super.initialiserObjet();
 super.setFenetre( getWDFenetreThis() );
-super.setQuid(2782376296526019260l);
+super.setQuid(2782376296526084796l);
 
-super.setChecksum("679706204");
+super.setChecksum("679771740");
 
-super.setNom("BTN_Programmer_des_repas");
+super.setNom("BTN_RationsMtn");
 
 super.setType(4);
 
-super.setLibelle("Programmer des repas");
+super.setLibelle("Envoie direct de ration(s)");
 
 super.setMenuContextuelSysteme();
 
@@ -62,15 +62,15 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(37, 63);
+super.setPositionInitiale(42, 86);
 
-super.setTailleInitiale(244, 70);
+super.setTailleInitiale(167, 82);
 
 super.setPlan(0);
 
 super.setImageEtat(1);
 
-super.setImageFondEtat(1);
+super.setImageFondEtat(5);
 
 super.setTailleMin(0, 0);
 
@@ -80,7 +80,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(1);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
 
 super.setNumTab(1);
 
@@ -112,120 +112,7 @@ super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
 
 super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
 
-super.setImageFond("", 1, 0, 2, 1);
-
-activerEcoute();
-super.terminerInitialisation();
-}
-
-/**
- * Traitement: Clic sur BTN_Programmer_des_repas
- */
-public void clicSurBoutonGauche()
-{
-super.clicSurBoutonGauche();
-
-// OuvreFenêtreMobile(FEN_Paramètres)
-WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_Parametres);
-
-}
-
-
-
-// Activation des écouteurs: 
-public void activerEcoute()
-{
-super.activerEcouteurClic();
-}
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des variables globales
-////////////////////////////////////////////////////////////////////////////
-}
-public GWDBTN_Programmer_des_repas mWD_BTN_Programmer_des_repas;
-
-/**
- * BTN_RationsMtn
- */
-class GWDBTN_RationsMtn extends WDBouton
-{
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°2 de FEN_choixAction.BTN_RationsMtn
-////////////////////////////////////////////////////////////////////////////
-public  void initialiserObjet()
-{
-super.initialiserObjet();
-super.setFenetre( getWDFenetreThis() );
-super.setQuid(2782376296526084796l);
-
-super.setChecksum("679771740");
-
-super.setNom("BTN_RationsMtn");
-
-super.setType(4);
-
-super.setLibelle("Envoie direct de ration(s)");
-
-super.setMenuContextuelSysteme();
-
-super.setNote("");
-
-super.setNavigable(true);
-
-super.setEtatInitial(0);
-
-super.setPositionInitiale(37, 161);
-
-super.setTailleInitiale(137, 103);
-
-super.setPlan(0);
-
-super.setImageEtat(1);
-
-super.setImageFondEtat(1);
-
-super.setTailleMin(0, 0);
-
-super.setTailleMax(2147483647, 2147483647);
-
-super.setVisibleInitial(true);
-
-super.setAltitude(2);
-
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
-
-super.setNumTab(2);
-
-super.setLettreAppel(65535);
-
-super.setTypeBouton(0);
-
-super.setTypeActionPredefinie(0);
-
-super.setBoutonOnOff(false);
-
-super.setLibelleVAlign(1);
-
-super.setLibelleHAlign(1);
-
-super.setPresenceLibelle(true);
-
-super.setImage("", 0, 2);
-
-super.setStyleLibelleRepos(0x0, creerPolice("MS Shell Dlg", -11.000000, 0));
-
-super.setStyleLibelleSurvol(0x808080, creerPolice("MS Shell Dlg", -11.000000, 0));
-
-super.setStyleLibelleEnfonce(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
-
-super.setStyleCadreRepos(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
-
-super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
-
-super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
-
-super.setImageFond("", 1, 0, 2, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\OMEGA0101.png?E5", 1, 0, 2, 1);
 
 activerEcoute();
 super.terminerInitialisation();
@@ -280,14 +167,14 @@ vWD_sMonDocIm.setValeur("FichierXML");
 // bResEnvoieIm est un booléen
 
 
-// dDateMtn est une Date = DateVersChaîne(DateSys(), "JJ/MM/AA")
+// dDateMtn est une Date = DateVersChaîne(DateSys(), "AA/MM/JJ")
 
-vWD_dDateMtn.setValeur(WDAPIDate.dateVersChaine(WDAPIDate.dateSys(),"JJ/MM/AA"));
+vWD_dDateMtn.setValeur(WDAPIDate.dateVersChaine(WDAPIDate.dateSys(),"AA/MM/JJ"));
 
 
-// hHeureMtn est une Heure = HeureVersChaîne(HeureSys(), "HH:MM")
+// hHeureMtn est une Heure = HeureVersChaîne(HeureSys(), "HH:MM:SS")
 
-vWD_hHeureMtn.setValeur(WDAPIDate.heureVersChaine(WDAPIDate.heureSys(),"HH:MM"));
+vWD_hHeureMtn.setValeur(WDAPIDate.heureVersChaine(WDAPIDate.heureSys(),"HH:MM:SS"));
 
 
 // sCheminFichier est une chaîne = "/storage/sdcard0/Download/FichierRationIm.xml"
@@ -301,31 +188,16 @@ vWD_bResEnregistreIm.setValeur(WDAPIXmlClassic.xmlDocument(vWD_sMonDocIm.getStri
 // SI bResEnregistreIm = Vrai ALORS
 if(vWD_bResEnregistreIm.opEgal(true))
 {
-// 	ToastAffiche("Document enregistré !")
-WDAPIToast.toastAffiche("Document enregistré !");
+// 	ToastAffiche("Document enregistré !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Document enregistré !",0,0);
 
 }
 
 // XMLAjouteFils(sMonDocIm,"PARAMETRES","",Vrai)
 WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"PARAMETRES","",true);
 
-// XMLParent(sMonDocIm)
-WDAPIXmlClassic.XMLParent(vWD_sMonDocIm.getString());
-
-// XMLAjouteFils(sMonDocIm,"DATE_MODIF","",Vrai)
-WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"DATE_MODIF","",true);
-
-// XMLAjouteFils(sMonDocIm,"Date",dDateMtn)
-WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"Date",vWD_dDateMtn.getString());
-
-// XMLAjouteFils(sMonDocIm,"Heure",hHeureMtn)
-WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"Heure",vWD_hHeureMtn.getString());
-
-// XMLParent(sMonDocIm)
-WDAPIXmlClassic.XMLParent(vWD_sMonDocIm.getString());
-
-// XMLAjouteFils(sMonDocIm,"RATION_IMMEDIATE","",Vrai)
-WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"RATION_IMMEDIATE","",true);
+// XMLAjouteFils(sMonDocIm,"Date_Modif",dDateMtn+" "+hHeureMtn)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"Date_Modif",vWD_dDateMtn.opPlus(" ").opPlus(vWD_hHeureMtn).getString());
 
 // XMLAjouteFils(sMonDocIm,"NbreRation",NumériqueVersChaîne(nNbreRationMtn))
 WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDocIm.getString(),"NbreRation",WDAPINum.numeriqueVersChaine(vWD_nNbreRationMtn).getString());
@@ -348,8 +220,8 @@ this.setEtat(4);
 // SI bResEnvoieIm = Vrai ALORS
 if(vWD_bResEnvoieIm.opEgal(true))
 {
-// 	ToastAffiche("Fichier envoyé !")
-WDAPIToast.toastAffiche("Fichier envoyé !");
+// 	ToastAffiche("Fichier envoyé !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Fichier envoyé !",0,0);
 
 // 	BTN_RationsMtn..Etat = Actif
 this.setEtat(0);
@@ -357,8 +229,8 @@ this.setEtat(0);
 }
 else
 {
-// 	Info("Echec de l'envoie du fichier !")
-WDAPIDialogue.info("Echec de l'envoie du fichier !");
+// 	Erreur("Echec de l'envoie du fichier !")
+WDAPIDialogue.erreur("Echec de l'envoie du fichier !");
 
 }
 
@@ -385,7 +257,7 @@ class GWDLIB_ChoixAction extends WDLibelle
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°3 de FEN_choixAction.LIB_ChoixAction
+// Déclaration des champs du fils n°2 de FEN_choixAction.LIB_ChoixAction
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
@@ -425,9 +297,9 @@ super.setTailleMax(2147483647, 2147483647);
 
 super.setVisibleInitial(true);
 
-super.setAltitude(3);
+super.setAltitude(2);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
 
 super.setEllipse(0);
 
@@ -459,7 +331,7 @@ class GWDCOMBO_RationActuel extends WDCombo
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°4 de FEN_choixAction.COMBO_RationActuel
+// Déclaration des champs du fils n°3 de FEN_choixAction.COMBO_RationActuel
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
@@ -481,7 +353,7 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(211, 194);
+super.setPositionInitiale(211, 104);
 
 super.setTailleInitiale(66, 48);
 
@@ -501,11 +373,11 @@ super.setTailleMax(2147483647, 2147483647);
 
 super.setVisibleInitial(true);
 
-super.setAltitude(4);
+super.setAltitude(3);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
 
-super.setNumTab(3);
+super.setNumTab(2);
 
 super.setLettreAppel(65535);
 
@@ -547,7 +419,7 @@ class GWDBTN_Consulter_l_historique extends WDBouton
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°5 de FEN_choixAction.BTN_Consulter_l_historique
+// Déclaration des champs du fils n°4 de FEN_choixAction.BTN_Consulter_l_historique
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
@@ -571,15 +443,15 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(40, 400);
+super.setPositionInitiale(42, 347);
 
-super.setTailleInitiale(241, 69);
+super.setTailleInitiale(239, 70);
 
 super.setPlan(0);
 
 super.setImageEtat(1);
 
-super.setImageFondEtat(1);
+super.setImageFondEtat(5);
 
 super.setTailleMin(0, 0);
 
@@ -587,9 +459,9 @@ super.setTailleMax(2147483647, 2147483647);
 
 super.setVisibleInitial(true);
 
-super.setAltitude(5);
+super.setAltitude(4);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
 
 super.setNumTab(5);
 
@@ -621,7 +493,7 @@ super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
 
 super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
 
-super.setImageFond("", 1, 0, 2, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\OMEGA0101.png?E5", 1, 0, 2, 1);
 
 activerEcoute();
 super.terminerInitialisation();
@@ -660,7 +532,7 @@ class GWDBTN_Appeler_votre_animal_de_compagnie extends WDBouton
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°6 de FEN_choixAction.BTN_Appeler_votre_animal_de_compagnie
+// Déclaration des champs du fils n°5 de FEN_choixAction.BTN_Appeler_votre_animal_de_compagnie
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
@@ -684,15 +556,15 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(40, 300);
+super.setPositionInitiale(42, 264);
 
-super.setTailleInitiale(241, 73);
+super.setTailleInitiale(239, 71);
 
 super.setPlan(0);
 
 super.setImageEtat(1);
 
-super.setImageFondEtat(1);
+super.setImageFondEtat(5);
 
 super.setTailleMin(0, 0);
 
@@ -700,9 +572,9 @@ super.setTailleMax(2147483647, 2147483647);
 
 super.setVisibleInitial(true);
 
-super.setAltitude(6);
+super.setAltitude(5);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
 
 super.setNumTab(4);
 
@@ -734,7 +606,7 @@ super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
 
 super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
 
-super.setImageFond("", 1, 0, 2, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\OMEGA0101.png?E5", 1, 0, 2, 1);
 
 activerEcoute();
 super.terminerInitialisation();
@@ -767,6 +639,385 @@ super.activerEcouteurClic();
 public GWDBTN_Appeler_votre_animal_de_compagnie mWD_BTN_Appeler_votre_animal_de_compagnie;
 
 /**
+ * BTN_Parametres
+ */
+class GWDBTN_Parametres extends WDBouton
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°6 de FEN_choixAction.BTN_Parametres
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2804531245370498045l);
+
+super.setChecksum("683054444");
+
+super.setNom("BTN_Parametres");
+
+super.setType(4);
+
+super.setLibelle("Programmer des repas");
+
+super.setMenuContextuelSysteme();
+
+super.setNote("");
+
+super.setNavigable(true);
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(42, 180);
+
+super.setTailleInitiale(235, 72);
+
+super.setPlan(0);
+
+super.setImageEtat(1);
+
+super.setImageFondEtat(5);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(6);
+
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
+
+super.setNumTab(3);
+
+super.setLettreAppel(65535);
+
+super.setTypeBouton(0);
+
+super.setTypeActionPredefinie(0);
+
+super.setBoutonOnOff(false);
+
+super.setLibelleVAlign(1);
+
+super.setLibelleHAlign(1);
+
+super.setPresenceLibelle(true);
+
+super.setImage("", 0, 2);
+
+super.setStyleLibelleRepos(0x0, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleLibelleSurvol(0x808080, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleLibelleEnfonce(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleCadreRepos(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
+
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\OMEGA0101.png?E5", 1, 0, 2, 1);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+/**
+ * Traitement: Clic sur BTN_Parametres
+ */
+public void clicSurBoutonGauche()
+{
+super.clicSurBoutonGauche();
+
+// OuvreFenêtreMobile(FEN_Paramètres)
+WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_Parametres);
+
+}
+
+
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+super.activerEcouteurClic();
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDBTN_Parametres mWD_BTN_Parametres;
+
+/**
+ * BTN_Suppr
+ */
+class GWDBTN_Suppr extends WDBouton
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°7 de FEN_choixAction.BTN_Suppr
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2807138556850817953l);
+
+super.setChecksum("727337062");
+
+super.setNom("BTN_Suppr");
+
+super.setType(4);
+
+super.setLibelle("Supprimer Programmation en cours");
+
+super.setMenuContextuelSysteme();
+
+super.setNote("");
+
+super.setNavigable(true);
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(42, 431);
+
+super.setTailleInitiale(261, 75);
+
+super.setPlan(0);
+
+super.setImageEtat(1);
+
+super.setImageFondEtat(5);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(7);
+
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
+
+super.setNumTab(6);
+
+super.setLettreAppel(65535);
+
+super.setTypeBouton(0);
+
+super.setTypeActionPredefinie(0);
+
+super.setBoutonOnOff(false);
+
+super.setLibelleVAlign(1);
+
+super.setLibelleHAlign(1);
+
+super.setPresenceLibelle(true);
+
+super.setImage("", 0, 2);
+
+super.setStyleLibelleRepos(0x0, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleLibelleSurvol(0x808080, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleLibelleEnfonce(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.setStyleCadreRepos(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
+
+super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
+
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\OMEGA010112.png?E5", 1, 0, 2, 1);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+/**
+ * Traitement: Initialisation de BTN_Suppr
+ */
+public void init()
+{
+super.init();
+
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables locales au traitement
+// (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
+////////////////////////////////////////////////////////////////////////////
+WDObjet vWD_SourceXML= new WDChaineU();
+
+
+
+// SourceXML est une chaîne = fChargeTexte("/storage/sdcard0/Download/FichierParametresXML.xml")
+
+vWD_SourceXML.setValeur(WDAPIFichier.fChargeTexte("/storage/sdcard0/Download/FichierParametresXML.xml"));
+
+
+// SI SourceXML = "" ALORS
+if(vWD_SourceXML.opEgal(""))
+{
+// 	Erreur("Pas de fichier existant !")
+WDAPIDialogue.erreur("Pas de fichier existant !");
+
+// 	BTN_Suppr..Etat = Grisé
+this.setEtat(4);
+
+}
+else
+{
+// 	BTN_Suppr..Etat = Actif
+this.setEtat(0);
+
+// 	ToastAffiche("Fichier chargé !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Fichier chargé !",0,0);
+
+}
+
+}
+
+
+
+/**
+ * Traitement: Clic sur BTN_Suppr
+ */
+public void clicSurBoutonGauche()
+{
+super.clicSurBoutonGauche();
+
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables locales au traitement
+// (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
+////////////////////////////////////////////////////////////////////////////
+WDObjet vWD_sMonDoc= new WDChaineA();
+
+WDObjet vWD_sSourceXML= new WDChaineA();
+
+WDObjet vWD_bResEnregistre= new WDBooleen();
+
+WDObjet vWD_bResEnvoie= new WDBooleen();
+
+WDObjet vWD_sCheminFichier= new WDChaineU();
+
+WDObjet vWD_dDateMtn = new WDDate();
+
+WDObjet vWD_hHeureMtn = new WDHeure();
+
+
+
+// sMonDoc est une chaîne ANSI = "FichierXML"
+
+vWD_sMonDoc.setValeur("FichierXML");
+
+
+// sSourceXML est une chaîne ansi
+
+
+// bResEnregistre est un booléen
+
+
+// bResEnvoie est un booléen
+
+
+// sCheminFichier est une chaîne = "/storage/sdcard0/Download/FichierParametresStop.xml"
+
+vWD_sCheminFichier.setValeur("/storage/sdcard0/Download/FichierParametresStop.xml");
+
+
+// dDateMtn est une date = DateVersChaîne(DateSys(),"AA-MM-JJ")
+
+vWD_dDateMtn.setValeur(WDAPIDate.dateVersChaine(WDAPIDate.dateSys(),"AA-MM-JJ"));
+
+
+// hHeureMtn est une heure = HeureVersChaîne(HeureSys(), "HH:MM:SS")
+
+vWD_hHeureMtn.setValeur(WDAPIDate.heureVersChaine(WDAPIDate.heureSys(),"HH:MM:SS"));
+
+
+// bResEnregistre = XMLDocument(sMonDoc, "")
+vWD_bResEnregistre.setValeur(WDAPIXmlClassic.xmlDocument(vWD_sMonDoc.getString(),new WDChaineU("")));
+
+// SI bResEnregistre = Vrai ALORS
+if(vWD_bResEnregistre.opEgal(true))
+{
+// 	ToastAffiche("Document enregistré !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Document enregistré !",0,0);
+
+}
+
+// XMLAjouteFils(sMonDoc,"REMISE_A_ZERO","",Vrai)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"REMISE_A_ZERO","",true);
+
+// XMLParent(sMonDoc)
+WDAPIXmlClassic.XMLParent(vWD_sMonDoc.getString());
+
+// XMLAjouteFils(sMonDoc,"Date_Modif",dDateMtn+" "+hHeureMtn)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Date_Modif",vWD_dDateMtn.opPlus(" ").opPlus(vWD_hHeureMtn).getString());
+
+// XMLParent(sMonDoc)
+WDAPIXmlClassic.XMLParent(vWD_sMonDoc.getString());
+
+// XMLAjouteFils(sMonDoc,"Remise_a_zero","1")
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Remise_a_zero","1");
+
+// sSourceXML = XMLConstruitChaîne(sMonDoc)
+vWD_sSourceXML.setValeur(WDAPIXml.xmlConstruitChaine(vWD_sMonDoc));
+
+// XMLTermine(sMonDoc)
+WDAPIXmlClassic.xmlTermine(vWD_sMonDoc.getString());
+
+// fSauveTexte(sCheminFichier,Remplace(sSourceXML,"><",">"+RC+"<"))
+WDAPIFichier.fSauveTexte(vWD_sCheminFichier.getString(),WDAPIChaine.remplace(vWD_sSourceXML,new WDChaineU("><"),new WDChaineU(">\r\n<")));
+
+// bResEnvoie = CommunicationRaspberry::EnvoyerFichier(sCheminFichier)
+vWD_bResEnvoie.setValeur(GWDCCommunicationRaspberry.fWD_envoyerFichier(vWD_sCheminFichier));
+
+// SI bResEnvoie = Vrai ALORS
+if(vWD_bResEnvoie.opEgal(true))
+{
+// 	ToastAffiche("Fichier envoyé !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Fichier envoyé !",0,0);
+
+// 	fSupprime("/storage/sdcard0/Download/FichierParametresXML.xml")
+WDAPIFichier.fSupprime("/storage/sdcard0/Download/FichierParametresXML.xml");
+
+// 	BTN_Suppr..Etat = Grisé
+this.setEtat(4);
+
+// 	ToastAffiche("Arrêt effectué !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Arrêt effectué !",0,0);
+
+}
+else
+{
+// 	Erreur("Echec de l'envoie du fichier !")
+WDAPIDialogue.erreur("Echec de l'envoie du fichier !");
+
+}
+
+}
+
+
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+super.activerEcouteurClic();
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDBTN_Suppr mWD_BTN_Suppr;
+
+/**
  * Traitement: Déclarations globales de FEN_choixAction
  */
 public void declarerGlobale(WDObjet[] WD_tabParam)
@@ -793,12 +1044,13 @@ public void activerEcoute()
 ////////////////////////////////////////////////////////////////////////////
 protected void creerChamps()
 {
-mWD_BTN_Programmer_des_repas = new GWDBTN_Programmer_des_repas();
 mWD_BTN_RationsMtn = new GWDBTN_RationsMtn();
 mWD_LIB_ChoixAction = new GWDLIB_ChoixAction();
 mWD_COMBO_RationActuel = new GWDCOMBO_RationActuel();
 mWD_BTN_Consulter_l_historique = new GWDBTN_Consulter_l_historique();
 mWD_BTN_Appeler_votre_animal_de_compagnie = new GWDBTN_Appeler_votre_animal_de_compagnie();
+mWD_BTN_Parametres = new GWDBTN_Parametres();
+mWD_BTN_Suppr = new GWDBTN_Suppr();
 
 }
 ////////////////////////////////////////////////////////////////////////////
@@ -840,7 +1092,7 @@ super.setGFI(true);
 
 super.setAnimationFenetre(0);
 
-super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\BG_Hybrid_Menu.png?_3NP_1_223_1_180", 1, 0, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\Bg_ColorSide_Orange02.png?_3NP_1_223_1_180", 1, 0, 1);
 
 
 activerEcoute();
@@ -848,8 +1100,6 @@ activerEcoute();
 ////////////////////////////////////////////////////////////////////////////
 // Initialisation des champs de FEN_choixAction
 ////////////////////////////////////////////////////////////////////////////
-mWD_BTN_Programmer_des_repas.initialiserObjet();
-super.ajouter("BTN_Programmer_des_repas", mWD_BTN_Programmer_des_repas);
 mWD_BTN_RationsMtn.initialiserObjet();
 super.ajouter("BTN_RationsMtn", mWD_BTN_RationsMtn);
 mWD_LIB_ChoixAction.initialiserObjet();
@@ -860,6 +1110,10 @@ mWD_BTN_Consulter_l_historique.initialiserObjet();
 super.ajouter("BTN_Consulter_l_historique", mWD_BTN_Consulter_l_historique);
 mWD_BTN_Appeler_votre_animal_de_compagnie.initialiserObjet();
 super.ajouter("BTN_Appeler_votre_animal_de_compagnie", mWD_BTN_Appeler_votre_animal_de_compagnie);
+mWD_BTN_Parametres.initialiserObjet();
+super.ajouter("BTN_Parametres", mWD_BTN_Parametres);
+mWD_BTN_Suppr.initialiserObjet();
+super.ajouter("BTN_Suppr", mWD_BTN_Suppr);
 
 super.terminerInitialisation();
 }

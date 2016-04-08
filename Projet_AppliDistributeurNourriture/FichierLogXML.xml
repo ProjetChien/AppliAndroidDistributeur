@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<LOGS>
+<REPAS_PROGRAMMEES>
+<Horaire1>12:30</Horaire1>
+<Ration1>3</Ration1>
+<Horaire2>19:30</Horaire2>
+<Ration2>2</Ration2>
+</REPAS_PROGRAMMEES>
+<REPAS_IMMEDIATS>
+<Ration_Im1>3</Ration_Im1>
+</REPAS_IMMEDIATS>
+<APPEL_PASSES>
+<Appel1>11:19</Appel1>
+</APPEL_PASSES>
+</LOGS>

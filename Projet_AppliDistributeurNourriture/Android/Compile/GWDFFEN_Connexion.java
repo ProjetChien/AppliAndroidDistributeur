@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Fenêtre
  * Classe Android : FEN_Connexion
- * Date : 10/03/2016 14:11:12
+ * Date : 07/04/2016 14:38:41
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -17,6 +17,8 @@ import fr.pcsoft.wdjava.ui.champs.fenetre.*;
 import fr.pcsoft.wdjava.ui.champs.libelle.*;
 import fr.pcsoft.wdjava.ui.champs.saisie.*;
 import fr.pcsoft.wdjava.ui.champs.bouton.*;
+import fr.pcsoft.wdjava.api.*;
+import fr.pcsoft.wdjava.ui.champs.groupeoptions.*;
 import fr.pcsoft.wdjava.ui.activite.*;
 /*Imports trouvés dans le code WL*/
 /*Fin Imports trouvés dans le code WL*/
@@ -79,7 +81,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(1);
 
-super.setAncrageInitial(8, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
 
 super.setEllipse(0);
 
@@ -135,7 +137,7 @@ super.setNote("");
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(20, 78);
+super.setPositionInitiale(30, 166);
 
 super.setTailleInitiale(273, 25);
 
@@ -153,7 +155,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(2);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
 
 super.setEllipse(0);
 
@@ -213,7 +215,7 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(20, 125);
+super.setPositionInitiale(30, 215);
 
 super.setTailleInitiale(252, 44);
 
@@ -237,7 +239,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(3);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
 
 super.setEllipse(0);
 
@@ -323,15 +325,15 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(56, 220);
+super.setPositionInitiale(54, 343);
 
-super.setTailleInitiale(200, 105);
+super.setTailleInitiale(203, 83);
 
 super.setPlan(0);
 
 super.setImageEtat(1);
 
-super.setImageFondEtat(1);
+super.setImageFondEtat(5);
 
 super.setTailleMin(0, 0);
 
@@ -341,9 +343,9 @@ super.setVisibleInitial(true);
 
 super.setAltitude(4);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
 
-super.setNumTab(2);
+super.setNumTab(3);
 
 super.setLettreAppel(65535);
 
@@ -373,7 +375,7 @@ super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
 
 super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
 
-super.setImageFond("", 1, 0, 2, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\OMEGA01011.png?E5", 1, 0, 2, 1);
 
 activerEcoute();
 super.terminerInitialisation();
@@ -386,11 +388,103 @@ public void clicSurBoutonGauche()
 {
 super.clicSurBoutonGauche();
 
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables locales au traitement
+// (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
+////////////////////////////////////////////////////////////////////////////
+WDObjet vWD_SourceXML= new WDChaineU();
+
+WDObjet vWD_sIPe= new WDChaineU();
+
+
+
 // gsIP = SAI_AdresseIP
 GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gsIP.setValeur(mWD_SAI_AdresseIP);
 
 // CommunicationRaspberry::Connexion(gsIP)
 GWDCCommunicationRaspberry.fWD_connexion(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gsIP);
+
+// SourceXML est une chaîne = fChargeTexte("/storage/sdcard0/Download/FichierAdresseIP.xml")
+
+vWD_SourceXML.setValeur(WDAPIFichier.fChargeTexte("/storage/sdcard0/Download/FichierAdresseIP.xml"));
+
+
+// sIPe est une chaîne = XMLExtraitChaîne(SourceXML, "IP")
+
+vWD_sIPe.setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"IP"));
+
+
+// SI INT_AdresseIP = 1 ET SAI_AdresseIP <> sIPe ALORS
+if((mWD_INT_AdresseIP.opEgal(1) & mWD_SAI_AdresseIP.opDiff(vWD_sIPe)))
+{
+// sMonDoc est une chaîne ANSI = "FichierXML"
+WDObjet vWD_sMonDoc= new WDChaineA();
+
+
+vWD_sMonDoc.setValeur("FichierXML");
+
+
+// sSourceXML est une chaîne ANSI
+WDObjet vWD_sSourceXML= new WDChaineA();
+
+
+
+// bResEnregistre est un booléen
+WDObjet vWD_bResEnregistre= new WDBooleen();
+
+
+
+// bResEnvoie est un booléen
+WDObjet vWD_bResEnvoie= new WDBooleen();
+
+
+
+// sCheminFichier est une chaîne = "/storage/sdcard0/Download/FichierAdresseIP.xml"
+WDObjet vWD_sCheminFichier= new WDChaineU();
+
+
+vWD_sCheminFichier.setValeur("/storage/sdcard0/Download/FichierAdresseIP.xml");
+
+
+// bResEnregistre = XMLDocument(sMonDoc, "")
+vWD_bResEnregistre.setValeur(WDAPIXmlClassic.xmlDocument(vWD_sMonDoc.getString(),new WDChaineU("")));
+
+// SI bResEnregistre = Vrai ALORS
+if(vWD_bResEnregistre.opEgal(true))
+{
+// 	ToastAffiche("Document enregistré !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Document enregistré !",0,0);
+
+}
+
+// XMLParent(sMonDoc)
+WDAPIXmlClassic.XMLParent(vWD_sMonDoc.getString());
+
+// XMLAjouteFils(sMonDoc,"ADRESSE_IP","",Vrai)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"ADRESSE_IP","",true);
+
+// XMLAjouteFils(sMonDoc,"IP",gsIP)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"IP",GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gsIP.getString());
+
+// sSourceXML = XMLConstruitChaîne(sMonDoc)
+vWD_sSourceXML.setValeur(WDAPIXml.xmlConstruitChaine(vWD_sMonDoc));
+
+// XMLTermine(sMonDoc)
+WDAPIXmlClassic.xmlTermine(vWD_sMonDoc.getString());
+
+// fSauveTexte(sCheminFichier,Remplace(sSourceXML,"><",">"+RC+"<"))
+WDAPIFichier.fSauveTexte(vWD_sCheminFichier.getString(),WDAPIChaine.remplace(vWD_sSourceXML,new WDChaineU("><"),new WDChaineU(">\r\n<")));
+
+// SI bResEnvoie = Vrai ALORS
+if(vWD_bResEnvoie.opEgal(true))
+{
+// 	ToastAffiche("Adresse enregistrée !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Adresse enregistrée !",0,0);
+
+}
+
+}
 
 }
 
@@ -409,6 +503,147 @@ super.activerEcouteurClic();
 public GWDBTN_Connexion mWD_BTN_Connexion;
 
 /**
+ * INT_AdresseIP
+ */
+class GWDINT_AdresseIP extends WDInterrupteur
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°5 de FEN_Connexion.INT_AdresseIP
+////////////////////////////////////////////////////////////////////////////
+
+/**
+ * INT_AdresseIP_Option_0
+ */
+class GWDINT_AdresseIP_Option_0 extends WDCaseACocher
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°1 de FEN_Connexion.INT_AdresseIP.INT_AdresseIP_Option_0
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setLibelle("Se souvenir de moi");
+
+super.setHauteurOption(0);
+
+super.setStyleLibelleOption(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
+
+super.terminerInitialisation();
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDINT_AdresseIP_Option_0 mWD_INT_AdresseIP_Option_0 = new GWDINT_AdresseIP_Option_0();
+/**
+ * Initialise tous les champs de FEN_Connexion.INT_AdresseIP
+ */
+public void initialiserSousObjets()
+{
+////////////////////////////////////////////////////////////////////////////
+// Initialisation des champs de FEN_Connexion.INT_AdresseIP
+////////////////////////////////////////////////////////////////////////////
+super.initialiserSousObjets();
+super.ajouterOption(mWD_INT_AdresseIP_Option_0);
+positionnerOptions();
+}
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setRectCompPrincipal(0,0,241,42);
+super.setQuid(2805749169233440236l);
+
+super.setChecksum("670153941");
+
+super.setNom("INT_AdresseIP");
+
+super.setType(5);
+
+super.setLibelle("Interrupteur");
+
+super.setMenuContextuelSysteme();
+
+super.setNote("");
+
+super.setNavigable(true);
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(30, 261);
+
+super.setTailleInitiale(241, 42);
+
+super.setValeurInitiale("0");
+
+super.setPlan(0);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(5);
+
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
+
+super.setNumTab(2);
+
+super.setLettreAppel(65535);
+
+super.setPersistant(false);
+
+super.setParamOptions(false, 1, true, true, false);
+
+super.setPresenceLibelle(false);
+
+super.setStyleLibelle(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0), -1);
+
+super.setCadreExterieur(1, 0xFFFFFFFF, 0xF1000000, 0xF3000000, 4, 4);
+
+super.setCadreInterne(1, 0xFFFFFFFF, 0xF1000000, 0xF3000000, 4, 4);
+
+super.setParamAnimationChamp(18, 19, 300);
+super.setParamAnimationChamp(19, 20, 300);
+
+super.setImageCoche("", 1);
+
+activerEcoute();
+initialiserSousObjets();
+super.terminerInitialisation();
+}
+
+/**
+ * Traitement: Initialisation de INT_AdresseIP
+ */
+public void init()
+// Initialisation de l’interrupteur à 1 (coché)
+{
+super.init();
+
+// INT_AdresseIP = 1
+this.setValeur(1);
+
+}
+
+
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDINT_AdresseIP mWD_INT_AdresseIP;
+
+/**
  * Traitement: Déclarations globales de FEN_Connexion
  */
 public void declarerGlobale(WDObjet[] WD_tabParam)
@@ -417,6 +652,49 @@ super.declarerGlobale(WD_tabParam);
 int WD_ntabParamLen = 0;
 if(WD_tabParam!=null) WD_ntabParamLen = WD_tabParam.length;
 
+
+}
+
+
+
+/**
+ * Traitement: Fin d'initialisation de FEN_Connexion
+ */
+public void init()
+//  Chargement du code XML
+{
+super.init();
+
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables locales au traitement
+// (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
+////////////////////////////////////////////////////////////////////////////
+WDObjet vWD_SourceXML= new WDChaineU();
+
+
+
+// SourceXML est une chaîne = fChargeTexte("/storage/sdcard0/Download/FichierAdresseIP.xml")
+
+vWD_SourceXML.setValeur(WDAPIFichier.fChargeTexte("/storage/sdcard0/Download/FichierAdresseIP.xml"));
+
+
+// SI SourceXML = "" ALORS
+if(vWD_SourceXML.opEgal(""))
+{
+// 	ToastAffiche("Bienvenue !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Bienvenue !",0,0);
+
+}
+else
+{
+// 	SAI_AdresseIP = XMLExtraitChaîne(SourceXML, "IP")
+mWD_SAI_AdresseIP.setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_SourceXML.getString(),"IP"));
+
+// 	ToastAffiche("Bonjour !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Bonjour !",0,0);
+
+}
 
 }
 
@@ -439,6 +717,7 @@ mWD_LIB_Bienvenue = new GWDLIB_Bienvenue();
 mWD_LIB_IP = new GWDLIB_IP();
 mWD_SAI_AdresseIP = new GWDSAI_AdresseIP();
 mWD_BTN_Connexion = new GWDBTN_Connexion();
+mWD_INT_AdresseIP = new GWDINT_AdresseIP();
 
 }
 ////////////////////////////////////////////////////////////////////////////
@@ -480,7 +759,7 @@ super.setGFI(true);
 
 super.setAnimationFenetre(0);
 
-super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\Bg_Hybrid_Menu_Popup.png?_3NP_1_223_1_180", 1, 0, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\Bg_ColorSide_Orange02.png?_3NP_1_223_1_180", 1, 0, 1);
 
 
 activerEcoute();
@@ -496,6 +775,8 @@ mWD_SAI_AdresseIP.initialiserObjet();
 super.ajouter("SAI_AdresseIP", mWD_SAI_AdresseIP);
 mWD_BTN_Connexion.initialiserObjet();
 super.ajouter("BTN_Connexion", mWD_BTN_Connexion);
+mWD_INT_AdresseIP.initialiserObjet();
+super.ajouter("INT_AdresseIP", mWD_INT_AdresseIP);
 
 super.terminerInitialisation();
 }

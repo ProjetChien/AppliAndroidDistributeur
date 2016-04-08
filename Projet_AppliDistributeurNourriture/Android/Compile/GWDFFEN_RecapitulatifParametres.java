@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Fenêtre
  * Classe Android : FEN_RécapitulatifParamètres
- * Date : 11/03/2016 09:40:30
+ * Date : 07/04/2016 14:38:41
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -139,7 +139,7 @@ super.setNavigable(true);
 
 super.setEtatInitial(1);
 
-super.setPositionInitiale(2, 59);
+super.setPositionInitiale(2, 128);
 
 super.setTailleInitiale(316, 280);
 
@@ -163,7 +163,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(2);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
 
 super.setEllipse(0);
 
@@ -199,9 +199,9 @@ super.setStyleLibelle(0x0, creerPolice("MS Shell Dlg", -11.000000, 0), 4);
 
 super.setCadreExterieur(1, 0xFFFFFFFF, 0x808080, 0x0, 4, 4);
 
-super.setCadreInterne(2, 0xFFFFFF, 0xF4000000, 0x0, 4, 4);
+super.setCadreInterne(2, 0xFFFFFFFF, 0xF4000000, 0x0, 4, 4);
 
-super.setStyleSaisie(0x0, creerPolice("MS Shell Dlg", -11.000000, 0));
+super.setStyleSaisie(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
 
 activerEcoute();
 super.terminerInitialisation();
@@ -301,15 +301,15 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(88, 385);
+super.setPositionInitiale(84, 431);
 
-super.setTailleInitiale(146, 48);
+super.setTailleInitiale(153, 47);
 
 super.setPlan(0);
 
 super.setImageEtat(1);
 
-super.setImageFondEtat(1);
+super.setImageFondEtat(5);
 
 super.setTailleMin(0, 0);
 
@@ -319,7 +319,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(3);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(5, 1000, 1000, 500, 1000);
 
 super.setNumTab(2);
 
@@ -351,7 +351,7 @@ super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
 
 super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
 
-super.setImageFond("", 1, 0, 2, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\OMEGA01013.png?E5", 1, 0, 2, 1);
 
 activerEcoute();
 super.terminerInitialisation();
@@ -390,7 +390,7 @@ WDObjet vWD_hHeureMtn = new WDHeure();
 vWD_sMonDoc.setValeur("FichierXML");
 
 
-// sSourceXML est une chaîne ANSI
+// sSourceXML est une chaîne ansi
 
 
 // bResEnregistre est un booléen
@@ -399,52 +399,37 @@ vWD_sMonDoc.setValeur("FichierXML");
 // bResEnvoie est un booléen
 
 
-// sCheminFichier est une chaîne = "/storage/sdcard0/Download/FichierParamètresXML.xml"
+// sCheminFichier est une chaîne = "/storage/sdcard0/Download/FichierParametresXML.xml"
 
-vWD_sCheminFichier.setValeur("/storage/sdcard0/Download/FichierParamètresXML.xml");
-
-
-// dDateMtn est une Date = DateVersChaîne(DateSys(),"JJ/MM/AA")
-
-vWD_dDateMtn.setValeur(WDAPIDate.dateVersChaine(WDAPIDate.dateSys(),"JJ/MM/AA"));
+vWD_sCheminFichier.setValeur("/storage/sdcard0/Download/FichierParametresXML.xml");
 
 
-// hHeureMtn est une Heure = HeureVersChaîne(HeureSys(), "HH:MM")
+// dDateMtn est une date = DateVersChaîne(DateSys(),"AA-MM-JJ")
 
-vWD_hHeureMtn.setValeur(WDAPIDate.heureVersChaine(WDAPIDate.heureSys(),"HH:MM"));
+vWD_dDateMtn.setValeur(WDAPIDate.dateVersChaine(WDAPIDate.dateSys(),"AA-MM-JJ"));
+
+
+// hHeureMtn est une heure = HeureVersChaîne(HeureSys(), "HH:MM:SS")
+
+vWD_hHeureMtn.setValeur(WDAPIDate.heureVersChaine(WDAPIDate.heureSys(),"HH:MM:SS"));
 
 
 // bResEnregistre = XMLDocument(sMonDoc, "")
 vWD_bResEnregistre.setValeur(WDAPIXmlClassic.xmlDocument(vWD_sMonDoc.getString(),new WDChaineU("")));
 
-// SI bResEnregistre = Vrai ALORS
+// si bResEnregistre = Vrai ALORS
 if(vWD_bResEnregistre.opEgal(true))
 {
-// 	ToastAffiche("Document enregistré !")
-WDAPIToast.toastAffiche("Document enregistré !");
+// 	ToastAffiche("Document enregistré !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Document enregistré !",0,0);
 
 }
 
 // XMLAjouteFils(sMonDoc,"PARAMETRES","",Vrai)
 WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"PARAMETRES","",true);
 
-// XMLParent(sMonDoc)
-WDAPIXmlClassic.XMLParent(vWD_sMonDoc.getString());
-
-// XMLAjouteFils(sMonDoc,"DATE_MODIF","",Vrai)
-WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"DATE_MODIF","",true);
-
-// XMLAjouteFils(sMonDoc,"Date",dDateMtn)
-WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Date",vWD_dDateMtn.getString());
-
-// XMLAjouteFils(sMonDoc,"Heure",hHeureMtn)
-WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Heure",vWD_hHeureMtn.getString());
-
-// XMLParent(sMonDoc)
-WDAPIXmlClassic.XMLParent(vWD_sMonDoc.getString());
-
-// XMLAjouteFils(sMonDoc,"LISTE_DE_REPAS","",Vrai)
-WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"LISTE_DE_REPAS","",true);
+// XMLAjouteFils(sMonDoc,"Date_Modif",dDateMtn+" "+hHeureMtn)
+WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"Date_Modif",vWD_dDateMtn.opPlus(" ").opPlus(vWD_hHeureMtn).getString());
 
 // XMLAjouteFils(sMonDoc,"NbreRepas",NumériqueVersChaîne(gnNbreRepas))
 WDAPIXmlClassic.xmlAjouteFils(vWD_sMonDoc.getString(),"NbreRepas",WDAPINum.numeriqueVersChaine(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas).getString());
@@ -505,7 +490,7 @@ vWD_sSourceXML.setValeur(WDAPIXml.xmlConstruitChaine(vWD_sMonDoc));
 // XMLTermine(sMonDoc)
 WDAPIXmlClassic.xmlTermine(vWD_sMonDoc.getString());
 
-// fSauveTexte(sCheminFichier,Remplace(sSourceXML,"><",">"+RC+"<"))
+// fSauveTexte(sCheminFichier,remplace(sSourceXML,"><",">"+rc+"<"))
 WDAPIFichier.fSauveTexte(vWD_sCheminFichier.getString(),WDAPIChaine.remplace(vWD_sSourceXML,new WDChaineU("><"),new WDChaineU(">\r\n<")));
 
 // bResEnvoie = CommunicationRaspberry::EnvoyerFichier(sCheminFichier)
@@ -514,14 +499,14 @@ vWD_bResEnvoie.setValeur(GWDCCommunicationRaspberry.fWD_envoyerFichier(vWD_sChem
 // SI bResEnvoie = Vrai ALORS
 if(vWD_bResEnvoie.opEgal(true))
 {
-// 	ToastAffiche("Fichier envoyé !")
-WDAPIToast.toastAffiche("Fichier envoyé !");
+// 	ToastAffiche("Fichier envoyé !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Fichier envoyé !",0,0);
 
 }
 else
 {
-// 	Info("Echec de l'envoie du fichier !")
-WDAPIDialogue.info("Echec de l'envoie du fichier !");
+// 	erreur("Echec de l'envoie du fichier !")
+WDAPIDialogue.erreur("Echec de l'envoie du fichier !");
 
 }
 
@@ -564,6 +549,9 @@ super.fermetureFenetre();
 
 // Ferme(FEN_Paramètres)
 WDAPIFenetre.ferme(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_Parametres);
+
+// Ferme(FEN_choixAction)
+WDAPIFenetre.ferme(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_choixAction);
 
 // OuvreFenêtreMobile(FEN_Paramètres)
 WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_Parametres);
@@ -629,7 +617,7 @@ super.setGFI(true);
 
 super.setAnimationFenetre(0);
 
-super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\Bg_Hybrid_Menu_Popup.png?_3NP_1_223_1_180", 1, 0, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\Bg_ColorSide_Orange02.png?_3NP_1_223_1_180", 1, 0, 1);
 
 
 activerEcoute();

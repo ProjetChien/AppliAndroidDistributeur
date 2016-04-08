@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Classe
  * Classe Android : CommunicationRaspberry
- * Date : 10/03/2016 14:35:46
+ * Date : 07/04/2016 14:34:14
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -23,14 +23,14 @@ import fr.pcsoft.wdjava.api.*;
 
 class GWDCCommunicationRaspberry extends WDClasse
 {
-public static WDObjet mWD_mg_bResEnvoie= new WDBooleen();
 public static WDObjet mWD_mg_nNumIdentifiant= new WDEntier();
+public static WDObjet mWD_mg_bResEnvoie= new WDBooleen();
 public static WDObjet mWD_mg_bResRecoie= new WDBooleen();
 
 protected WDObjet getMembreByName(String sNomMembre)
 {
-if(sNomMembre.equals("mg_bresenvoie")) return mWD_mg_bResEnvoie;
 if(sNomMembre.equals("mg_nnumidentifiant")) return mWD_mg_nNumIdentifiant;
+if(sNomMembre.equals("mg_bresenvoie")) return mWD_mg_bResEnvoie;
 if(sNomMembre.equals("mg_bresrecoie")) return mWD_mg_bResRecoie;
 
 return super.getMembreByName(sNomMembre);
@@ -39,8 +39,8 @@ protected boolean getMembreByIndex(int nIndice, WDClasse.Membre membre)
 {
 switch(nIndice)
 {
-case 0 : membre.m_refMembre = mWD_mg_bResEnvoie; membre.m_strNomMembre = "mWD_mg_bResEnvoie"; membre.m_bStatique = true; membre.m_strNomMembreWL = "mg_bResEnvoie"; membre.m_bSerialisable = true; return true;
-case 1 : membre.m_refMembre = mWD_mg_nNumIdentifiant; membre.m_strNomMembre = "mWD_mg_nNumIdentifiant"; membre.m_bStatique = true; membre.m_strNomMembreWL = "mg_nNumIdentifiant"; membre.m_bSerialisable = true; return true;
+case 0 : membre.m_refMembre = mWD_mg_nNumIdentifiant; membre.m_strNomMembre = "mWD_mg_nNumIdentifiant"; membre.m_bStatique = true; membre.m_strNomMembreWL = "mg_nNumIdentifiant"; membre.m_bSerialisable = true; return true;
+case 1 : membre.m_refMembre = mWD_mg_bResEnvoie; membre.m_strNomMembre = "mWD_mg_bResEnvoie"; membre.m_bStatique = true; membre.m_strNomMembreWL = "mg_bResEnvoie"; membre.m_bSerialisable = true; return true;
 case 2 : membre.m_refMembre = mWD_mg_bResRecoie; membre.m_strNomMembre = "mWD_mg_bResRecoie"; membre.m_bStatique = true; membre.m_strNomMembreWL = "mg_bResRecoie"; membre.m_bSerialisable = true; return true;
 
 default: return super.getMembreByIndex(nIndice - 3, membre);
@@ -71,9 +71,7 @@ protected void destructeur()
 // 
 //  Paramètres :
 // 	sAdresseIP (chaîne UNICODE) : Récupère l'adresse IP rentrée par l'utilisateur.
-//  Valeur de retour :
-//  	Aucune
-// 
+//  Valeur de retour : aucune
 static public void fWD_connexion( WDObjet vWD_sAdresseIP )
 {
 initExecMethodeStatiqueClasse("Connexion", "CommunicationRaspberry");
@@ -93,14 +91,14 @@ if(mWD_mg_nNumIdentifiant.opDiff(-1))
 // 	OuvreFenêtreMobile(FEN_choixAction)
 WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_choixAction);
 
-// 	ToastAffiche("Connexion établie !")
-WDAPIToast.toastAffiche("Connexion établie !");
+// 	ToastAffiche("Connexion établie !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Connexion établie !",0,0);
 
 }
 else
 {
-// 	Info("Erreur lors de la connexion !")
-WDAPIDialogue.info("Erreur lors de la connexion !");
+// 	Erreur("Erreur lors de la connexion !")
+WDAPIDialogue.erreur("Erreur lors de la connexion !");
 
 }
 
@@ -117,14 +115,9 @@ finally
 // [ <Résultat> = ] EnvoyerFichier (<sCheminFichierXML> est chaîne)
 // 
 //  Paramètres :
-// 	sCheminFichierXML (chaîne UNICODE) : <indiquez ici le rôle de sCheminFichierXML>
+// 	sCheminFichierXML (chaîne UNICODE) : C'est le chemin où se trouve le fichier à envoyer.
 //  Valeur de retour :
-//  	booléen : // 	Aucune
-// 
-//  Exemple :
-//  Indiquez ici un exemple d'utilisation.
-// 
-// 	ResEnvoie (booléen) : Permet de confirmer l'envoie du fichier.
+//  	booléen : mg_bResEnvoie permet de vérifier le bon envoie du fichier.
 static public WDObjet fWD_envoyerFichier( WDObjet vWD_sCheminFichierXML )
 {
 initExecMethodeStatiqueClasse("EnvoyerFichier", "CommunicationRaspberry");
@@ -149,29 +142,27 @@ finally
 }
 
 
-//  Résumé : <indiquez ici ce que fait la procédure>
+//  Résumé : Cette procédure permet la réception d'un fichier se situant sur le raspberry pi.
 //  Syntaxe :
 // [ <Résultat> = ] RecevoirFichier ()
 // 
-//  Paramètres :
-// 	Aucun
+//  Paramètres : aucun
 //  Valeur de retour :
-//  	booléen : // 	Aucune
-// 
-//  Exemple :
-//  Indiquez ici un exemple d'utilisation.
-// 
-static public WDObjet fWD_recevoirFichier()
+//  	booléen : mg_bResRecoie permet de vérifier le bon transfert vers l'application mobile du fichier.
+static public WDObjet fWD_recevoirFichier( WDObjet vWD_sCheminFichierXML )
 {
 initExecMethodeStatiqueClasse("RecevoirFichier", "CommunicationRaspberry");
 
 
 try
 {
-// mg_bResRecoie = FTPRécupère(mg_nNumIdentifiant,"/home/pi/FichierParamètresXML.xml","/storage/sdcard0/Download")
-mWD_mg_bResRecoie.setValeur(WDAPIFtp.ftpRecupere(mWD_mg_nNumIdentifiant.getInt(),"/home/pi/FichierParamètresXML.xml","/storage/sdcard0/Download"));
+vWD_sCheminFichierXML = WDParametre.traiterParametre(vWD_sCheminFichierXML, 1, false, 16);
 
-// RENVOYER mg_bResRecoie
+
+// mg_bResRecoie = FTPRécupère(mg_nNumIdentifiant,sCheminFichierXML,"/storage/sdcard0/Download")
+mWD_mg_bResRecoie.setValeur(WDAPIFtp.ftpRecupere(mWD_mg_nNumIdentifiant.getInt(),vWD_sCheminFichierXML.getString(),"/storage/sdcard0/Download"));
+
+// renvoyer mg_bResRecoie
 return mWD_mg_bResRecoie;
 
 }

@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Fenêtre
  * Classe Android : FEN_Historique
- * Date : 08/03/2016 10:47:15
+ * Date : 07/04/2016 14:27:14
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -15,7 +15,7 @@ import fr.pcsoft.wdjava.core.types.*;
 import fr.pcsoft.wdjava.core.*;
 import fr.pcsoft.wdjava.ui.champs.fenetre.*;
 import fr.pcsoft.wdjava.ui.champs.saisie.*;
-import fr.pcsoft.wdjava.ui.champs.bouton.*;
+import fr.pcsoft.wdjava.ui.champs.combo.*;
 import fr.pcsoft.wdjava.api.*;
 import fr.pcsoft.wdjava.ui.activite.*;
 /*Imports trouvés dans le code WL*/
@@ -43,7 +43,7 @@ public  void initialiserObjet()
 {
 super.initialiserObjet();
 super.setFenetre( getWDFenetreThis() );
-super.setRectCompPrincipal(0,2,316,240);
+super.setRectCompPrincipal(0,2,316,289);
 super.setQuid(2800554410584991985l);
 
 super.setChecksum("670047385");
@@ -62,11 +62,11 @@ super.setTaille(0);
 
 super.setNavigable(true);
 
-super.setEtatInitial(0);
+super.setEtatInitial(1);
 
-super.setPositionInitiale(2, 88);
+super.setPositionInitiale(2, 87);
 
-super.setTailleInitiale(316, 244);
+super.setTailleInitiale(316, 293);
 
 super.setValeurInitiale("");
 
@@ -88,7 +88,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(1);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(10, 1000, 1000, 500, 1000);
 
 super.setEllipse(0);
 
@@ -124,9 +124,9 @@ super.setStyleLibelle(0x0, creerPolice("MS Shell Dlg", -11.000000, 0), 4);
 
 super.setCadreExterieur(1, 0xFFFFFFFF, 0x808080, 0x0, 4, 4);
 
-super.setCadreInterne(2, 0xF4800000, 0xF4000000, 0x0, 4, 4);
+super.setCadreInterne(2, 0xFFFFFFFF, 0xF4000000, 0x0, 4, 4);
 
-super.setStyleSaisie(0x0, creerPolice("MS Shell Dlg", -11.000000, 0));
+super.setStyleSaisie(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
 
 activerEcoute();
 super.terminerInitialisation();
@@ -144,27 +144,25 @@ public void activerEcoute()
 public GWDSAI_Historique mWD_SAI_Historique;
 
 /**
- * BTN_RecupHistorique
+ * COMBO_ChoixTri
  */
-class GWDBTN_RecupHistorique extends WDBouton
+class GWDCOMBO_ChoixTri extends WDCombo
 {
 
 ////////////////////////////////////////////////////////////////////////////
-// Déclaration des champs du fils n°2 de FEN_Historique.BTN_RecupHistorique
+// Déclaration des champs du fils n°2 de FEN_Historique.COMBO_ChoixTri
 ////////////////////////////////////////////////////////////////////////////
 public  void initialiserObjet()
 {
 super.initialiserObjet();
 super.setFenetre( getWDFenetreThis() );
-super.setQuid(2800556704098258523l);
+super.setRectLibelle(0,2,79,40);
+super.setRectCompPrincipal(79,2,237,40);
+super.setNom("COMBO_ChoixTri");
 
-super.setChecksum("670771447");
+super.setType(10002);
 
-super.setNom("BTN_RecupHistorique");
-
-super.setType(4);
-
-super.setLibelle("Récupérer Historique");
+super.setLibelle("Choix : ");
 
 super.setMenuContextuelSysteme();
 
@@ -174,15 +172,19 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(75, 395);
+super.setPositionInitiale(2, 418);
 
-super.setTailleInitiale(160, 66);
+super.setTailleInitiale(316, 44);
+
+super.setValeurInitiale("");
 
 super.setPlan(0);
 
-super.setImageEtat(1);
+super.setCadrageHorizontal(0);
 
-super.setImageFondEtat(1);
+super.setContenuInitial("Tout voir\nRepas programmés\nRations exceptionnelles\nAppels");
+
+super.setTriee(false);
 
 super.setTailleMin(0, 0);
 
@@ -192,93 +194,187 @@ super.setVisibleInitial(true);
 
 super.setAltitude(2);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(1, 0, 1000, 1000, 1000);
 
 super.setNumTab(2);
 
 super.setLettreAppel(65535);
 
-super.setTypeBouton(0);
+super.setRetourneValeurProgrammation(false);
 
-super.setTypeActionPredefinie(0);
-
-super.setBoutonOnOff(false);
-
-super.setLibelleVAlign(1);
-
-super.setLibelleHAlign(1);
+super.setPersistant(false);
 
 super.setPresenceLibelle(true);
 
-super.setImage("", 0, 2);
+super.setStyleLibelle(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0), 4);
 
-super.setStyleLibelleRepos(0x0, creerPolice("MS Shell Dlg", -11.000000, 0));
+super.setCadreExterieur(1, 0xFFFFFFFF, 0xF1000000, 0xF3000000, 4, 4);
 
-super.setStyleLibelleSurvol(0x808080, creerPolice("MS Shell Dlg", -11.000000, 0));
+super.setCadreInterne(2, 0xFFFFFF, 0xF4000000, 0x0, 4, 4);
 
-super.setStyleLibelleEnfonce(0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0));
+super.setStyleElement(0x0, 0xFFFFFF, creerPolice("MS Shell Dlg", -11.000000, 0), 30);
 
-super.setStyleCadreRepos(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
-
-super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
-
-super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
-
-super.setImageFond("", 1, 0, 2, 1);
+super.setStyleSelection(0xF5800000, 0xF5000000, creerPolice("MS Shell Dlg", -11.000000, 0));
 
 activerEcoute();
 super.terminerInitialisation();
 }
 
 /**
- * Traitement: Clic sur BTN_RecupHistorique
+ * Traitement: Sélection d'une ligne de COMBO_ChoixTri
  */
-public void clicSurBoutonGauche()
+public void selectionLigne()
 {
-super.clicSurBoutonGauche();
+super.selectionLigne();
 
-
-////////////////////////////////////////////////////////////////////////////
-// Déclaration des variables locales au traitement
-// (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
-////////////////////////////////////////////////////////////////////////////
-WDObjet vWD_bResRecoie= new WDBooleen();
-
-WDObjet vWD_sSourceXML= new WDChaineU();
-
-
-
-// bResRecoie est un booléen
-
-
-// bResRecoie = CommunicationRaspberry::RecevoirFichier()
-vWD_bResRecoie.setValeur(GWDCCommunicationRaspberry.fWD_recevoirFichier());
-
-// sSourceXML est une chaîne = fChargeTexte("/storage/sdcard0/Download/FichierParamètresXML.xml")
-
-vWD_sSourceXML.setValeur(WDAPIFichier.fChargeTexte("/storage/sdcard0/Download/FichierParamètresXML.xml"));
-
-
-// SI bResRecoie = Faux ALORS
-if(vWD_bResRecoie.opEgal(false))
+// selon COMBO_ChoixTri
+// Délimiteur de visibilité pour ne pas étendre la visibilité de la variable temporaire _WDExpSelon
 {
-// 	Info("Fichier non joignable !")
-WDAPIDialogue.info("Fichier non joignable !");
+WDObjet _WDExpSelon0 = this;
+if(_WDExpSelon0.opEgal("1"))
+{
+// 		SAI_Historique = ""
+mWD_SAI_Historique.setValeur("");
+
+// 		XMLPremier("DoxXML")
+WDAPIXmlClassic.xmlPremier("DoxXML");
+
+// 		TANTQUE XMLEnDehors("DoxXML") = Faux
+while(WDAPIXmlClassic.xmlEnDehors("DoxXML").opEgal(false))
+{
+// 			SELON XMLNomElément("DoxXML")
+// Délimiteur de visibilité pour ne pas étendre la visibilité de la variable temporaire _WDExpSelon
+{
+WDObjet _WDExpSelon1 = WDAPIXmlClassic.XMLNomElement("DoxXML");
+if(_WDExpSelon1.opEgal("Horaire"))
+{
+// 					SAI_Historique += "Repas à : " + XMLDonnée("DoxXML") + RC
+mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(new WDChaineU("Repas à : ").opPlus(WDAPIXmlClassic.xmlDonnee("DoxXML")).opPlus("\r\n")));
 
 }
-else
+else if(_WDExpSelon1.opEgal("Ration"))
 {
-// 	ToastAffiche("Fichier téléchargé !")
-WDAPIToast.toastAffiche("Fichier téléchargé !");
+// 					SAI_Historique += "Nombre de ration : " + XMLDonnée("DoxXML") + RC
+mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(new WDChaineU("Nombre de ration : ").opPlus(WDAPIXmlClassic.xmlDonnee("DoxXML")).opPlus("\r\n")));
 
-// 	SAI_Historique = XMLExtraitChaîne(sSourceXML,"NbreRepas") + RC
-mWD_SAI_Historique.setValeur(WDAPIXmlClassic.xmlExtraitChaine(vWD_sSourceXML.getString(),"NbreRepas").opPlus("\r\n"));
+}
+else if(_WDExpSelon1.opEgal("Ration_Im"))
+{
+// 					SAI_Historique += "Nombre de ration immédiate : " + XMLDonnée("DoxXML") + RC	
+mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(new WDChaineU("Nombre de ration immédiate : ").opPlus(WDAPIXmlClassic.xmlDonnee("DoxXML")).opPlus("\r\n")));
 
-// 	SAI_Historique += XMLExtraitChaîne(sSourceXML,"Horaire1") + RC 
-mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(WDAPIXmlClassic.xmlExtraitChaine(vWD_sSourceXML.getString(),"Horaire1").opPlus("\r\n")));
+}
+else if(_WDExpSelon1.opEgal("Appel"))
+{
+// 					SAI_Historique += "Appel passé à : " + XMLDonnée("DoxXML") + RC
+mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(new WDChaineU("Appel passé à : ").opPlus(WDAPIXmlClassic.xmlDonnee("DoxXML")).opPlus("\r\n")));
 
-// 	SAI_Historique += XMLExtraitChaîne(sSourceXML, "Ration1") + RC
-mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(WDAPIXmlClassic.xmlExtraitChaine(vWD_sSourceXML.getString(),"Ration1").opPlus("\r\n")));
+}
+
+}
+
+// 			XMLSuivant("DoxXML")
+WDAPIXmlClassic.xmlSuivant("DoxXML");
+
+}
+
+}
+else if(_WDExpSelon0.opEgal("2"))
+{
+// 		SAI_Historique = ""
+mWD_SAI_Historique.setValeur("");
+
+// 		XMLPremier("DoxXML")
+WDAPIXmlClassic.xmlPremier("DoxXML");
+
+// 		TANTQUE XMLEnDehors("DoxXML") = Faux
+while(WDAPIXmlClassic.xmlEnDehors("DoxXML").opEgal(false))
+{
+// 			SELON XMLNomElément("DoxXML")
+// Délimiteur de visibilité pour ne pas étendre la visibilité de la variable temporaire _WDExpSelon
+{
+WDObjet _WDExpSelon2 = WDAPIXmlClassic.XMLNomElement("DoxXML");
+if(_WDExpSelon2.opEgal("Horaire"))
+{
+// 					SAI_Historique += "Repas à : " + XMLDonnée("DoxXML") + RC
+mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(new WDChaineU("Repas à : ").opPlus(WDAPIXmlClassic.xmlDonnee("DoxXML")).opPlus("\r\n")));
+
+}
+else if(_WDExpSelon2.opEgal("Ration"))
+{
+// 					SAI_Historique += "Nombre de ration : " + XMLDonnée("DoxXML") + RC	
+mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(new WDChaineU("Nombre de ration : ").opPlus(WDAPIXmlClassic.xmlDonnee("DoxXML")).opPlus("\r\n")));
+
+}
+
+}
+
+// 			XMLSuivant("DoxXML")
+WDAPIXmlClassic.xmlSuivant("DoxXML");
+
+}
+
+}
+else if(_WDExpSelon0.opEgal("3"))
+{
+// 		SAI_Historique = ""
+mWD_SAI_Historique.setValeur("");
+
+// 		XMLPremier("DoxXML")
+WDAPIXmlClassic.xmlPremier("DoxXML");
+
+// 		TANTQUE XMLEnDehors("DoxXML") = Faux
+while(WDAPIXmlClassic.xmlEnDehors("DoxXML").opEgal(false))
+{
+// 			SELON XMLNomElément("DoxXML")
+// Délimiteur de visibilité pour ne pas étendre la visibilité de la variable temporaire _WDExpSelon
+{
+WDObjet _WDExpSelon3 = WDAPIXmlClassic.XMLNomElement("DoxXML");
+if(_WDExpSelon3.opEgal("Ration_Im"))
+{
+// 					SAI_Historique += "Nombre de ration immédiate : " + XMLDonnée("DoxXML") + RC	
+mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(new WDChaineU("Nombre de ration immédiate : ").opPlus(WDAPIXmlClassic.xmlDonnee("DoxXML")).opPlus("\r\n")));
+
+}
+
+}
+
+// 			XMLSuivant("DoxXML")
+WDAPIXmlClassic.xmlSuivant("DoxXML");
+
+}
+
+}
+else if(_WDExpSelon0.opEgal("4"))
+{
+// 			SAI_Historique = ""
+mWD_SAI_Historique.setValeur("");
+
+// 			XMLPremier("DoxXML")
+WDAPIXmlClassic.xmlPremier("DoxXML");
+
+// 			TANTQUE XMLEnDehors("DoxXML") = Faux
+while(WDAPIXmlClassic.xmlEnDehors("DoxXML").opEgal(false))
+{
+// 				SELON XMLNomElément("DoxXML")
+// Délimiteur de visibilité pour ne pas étendre la visibilité de la variable temporaire _WDExpSelon
+{
+WDObjet _WDExpSelon4 = WDAPIXmlClassic.XMLNomElement("DoxXML");
+if(_WDExpSelon4.opEgal("Appel"))
+{
+// 					SAI_Historique += "Appel passé à : " + XMLDonnée("DoxXML") + RC
+mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(new WDChaineU("Appel passé à : ").opPlus(WDAPIXmlClassic.xmlDonnee("DoxXML")).opPlus("\r\n")));
+
+}
+
+}
+
+// 				XMLSuivant("DoxXML")
+WDAPIXmlClassic.xmlSuivant("DoxXML");
+
+}
+
+}
 
 }
 
@@ -289,14 +385,14 @@ mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(WDAPIXmlClassic.xmlExtrai
 // Activation des écouteurs: 
 public void activerEcoute()
 {
-super.activerEcouteurClic();
+super.activerEcouteurSelection();
 }
 
 ////////////////////////////////////////////////////////////////////////////
 // Déclaration des variables globales
 ////////////////////////////////////////////////////////////////////////////
 }
-public GWDBTN_RecupHistorique mWD_BTN_RecupHistorique;
+public GWDCOMBO_ChoixTri mWD_COMBO_ChoixTri;
 
 /**
  * Traitement: Déclarations globales de FEN_Historique
@@ -307,6 +403,117 @@ super.declarerGlobale(WD_tabParam);
 int WD_ntabParamLen = 0;
 if(WD_tabParam!=null) WD_ntabParamLen = WD_tabParam.length;
 
+
+}
+
+
+
+/**
+ * Traitement: Fin d'initialisation de FEN_Historique
+ */
+public void init()
+{
+super.init();
+
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables locales au traitement
+// (En WLangage les variables sont encore visibles après la fin du bloc dans lequel elles sont déclarées)
+////////////////////////////////////////////////////////////////////////////
+WDObjet vWD_bResRecoie= new WDBooleen();
+
+WDObjet vWD_sSourceXML= new WDChaineA();
+
+WDObjet vWD_sCheminHistorique= new WDChaineU();
+
+
+
+// bResRecoie est un booléen
+
+
+// sSourceXML est une chaîne ANSI
+
+
+// sCheminHistorique est une chaîne = "/home/pi/FichierLogXML.xml"
+
+vWD_sCheminHistorique.setValeur("/home/pi/FichierLogXML.xml");
+
+
+// bResRecoie = CommunicationRaspberry::RecevoirFichier(sCheminHistorique)
+vWD_bResRecoie.setValeur(GWDCCommunicationRaspberry.fWD_recevoirFichier(vWD_sCheminHistorique));
+
+// sSourceXML = fChargeTexte("/storage/sdcard0/Download/FichierLogXML.xml")
+vWD_sSourceXML.setValeur(WDAPIFichier.fChargeTexte("/storage/sdcard0/Download/FichierLogXML.xml"));
+
+// SI bResRecoie = Faux ALORS
+if(vWD_bResRecoie.opEgal(false))
+{
+// 	Erreur("Fichier non joignable !")
+WDAPIDialogue.erreur("Fichier non joignable !");
+
+}
+else
+{
+// 	XMLDocument("DoxXML", sSourceXML)
+WDAPIXmlClassic.xmlDocument("DoxXML",vWD_sSourceXML);
+
+// 	XMLFils("DoxXML")
+WDAPIXmlClassic.xmlFils("DoxXML");
+
+// 	TANTQUE XMLEnDehors("DoxXML") = Faux
+while(WDAPIXmlClassic.xmlEnDehors("DoxXML").opEgal(false))
+{
+// 		SELON XMLNomElément("DoxXML")
+// Délimiteur de visibilité pour ne pas étendre la visibilité de la variable temporaire _WDExpSelon
+{
+WDObjet _WDExpSelon0 = WDAPIXmlClassic.XMLNomElement("DoxXML");
+if(_WDExpSelon0.opEgal("Horaire"))
+{
+// 				SAI_Historique += "Repas à : " + XMLDonnée("DoxXML") + RC
+mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(new WDChaineU("Repas à : ").opPlus(WDAPIXmlClassic.xmlDonnee("DoxXML")).opPlus("\r\n")));
+
+}
+else if(_WDExpSelon0.opEgal("Ration"))
+{
+// 				SAI_Historique += "Nombre de ration : " + XMLDonnée("DoxXML") + RC
+mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(new WDChaineU("Nombre de ration : ").opPlus(WDAPIXmlClassic.xmlDonnee("DoxXML")).opPlus("\r\n")));
+
+}
+else if(_WDExpSelon0.opEgal("Ration_Im"))
+{
+// 				SAI_Historique += "Nombre de ration immédiate : " + XMLDonnée("DoxXML") + RC	
+mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(new WDChaineU("Nombre de ration immédiate : ").opPlus(WDAPIXmlClassic.xmlDonnee("DoxXML")).opPlus("\r\n")));
+
+}
+else if(_WDExpSelon0.opEgal("Appel"))
+{
+// 				SAI_Historique += "Appel passé à : " + XMLDonnée("DoxXML") + RC		
+mWD_SAI_Historique.setValeur(mWD_SAI_Historique.opPlus(new WDChaineU("Appel passé à : ").opPlus(WDAPIXmlClassic.xmlDonnee("DoxXML")).opPlus("\r\n")));
+
+}
+
+}
+
+// 	    XMLSuivant("DoxXML")
+WDAPIXmlClassic.xmlSuivant("DoxXML");
+
+}
+
+}
+
+}
+
+
+
+/**
+ * Traitement: Fermeture de FEN_Historique
+ */
+public void fermetureFenetre()
+{
+super.fermetureFenetre();
+
+// XMLTermine("DoxXML")
+WDAPIXmlClassic.xmlTermine("DoxXML");
 
 }
 
@@ -326,7 +533,7 @@ public void activerEcoute()
 protected void creerChamps()
 {
 mWD_SAI_Historique = new GWDSAI_Historique();
-mWD_BTN_RecupHistorique = new GWDBTN_RecupHistorique();
+mWD_COMBO_ChoixTri = new GWDCOMBO_ChoixTri();
 
 }
 ////////////////////////////////////////////////////////////////////////////
@@ -368,7 +575,7 @@ super.setGFI(true);
 
 super.setAnimationFenetre(0);
 
-super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\Bg_Hybrid_Menu_Popup.png?_3NP_1_223_1_180", 1, 0, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\Bg_ColorSide_Orange02.png?_3NP_1_223_1_180", 1, 0, 1);
 
 
 activerEcoute();
@@ -378,8 +585,8 @@ activerEcoute();
 ////////////////////////////////////////////////////////////////////////////
 mWD_SAI_Historique.initialiserObjet();
 super.ajouter("SAI_Historique", mWD_SAI_Historique);
-mWD_BTN_RecupHistorique.initialiserObjet();
-super.ajouter("BTN_RecupHistorique", mWD_BTN_RecupHistorique);
+mWD_COMBO_ChoixTri.initialiserObjet();
+super.ajouter("COMBO_ChoixTri", mWD_COMBO_ChoixTri);
 
 super.terminerInitialisation();
 }

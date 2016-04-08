@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Fenêtre
  * Classe Android : FEN_Paramètres
- * Date : 11/02/2016 15:47:15
+ * Date : 07/04/2016 14:38:41
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -63,7 +63,7 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(34, 15);
+super.setPositionInitiale(34, 14);
 
 super.setTailleInitiale(238, 44);
 
@@ -85,7 +85,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(1);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
 
 super.setNumTab(1);
 
@@ -224,7 +224,7 @@ super.setNote("");
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(202, 80);
+super.setPositionInitiale(202, 90);
 
 super.setTailleInitiale(116, 63);
 
@@ -242,7 +242,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(2);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 1000, 1000);
 
 super.setEllipse(0);
 
@@ -298,15 +298,15 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(85, 441);
+super.setPositionInitiale(81, 448);
 
-super.setTailleInitiale(150, 48);
+super.setTailleInitiale(163, 49);
 
 super.setPlan(0);
 
 super.setImageEtat(1);
 
-super.setImageFondEtat(1);
+super.setImageFondEtat(5);
 
 super.setTailleMin(0, 0);
 
@@ -316,7 +316,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(3);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(5, 1000, 1000, 500, 1000);
 
 super.setNumTab(4);
 
@@ -348,7 +348,7 @@ super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
 
 super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
 
-super.setImageFond("", 1, 0, 2, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\OMEGA01012.png?E5", 1, 0, 2, 1);
 
 activerEcoute();
 super.terminerInitialisation();
@@ -396,8 +396,8 @@ vWD_nTailleZRinf.setValeur(mWD_ZR_Params.getOccurrence().opMoins(1));
 // SI gnNbreRepas = "0" ALORS
 if(GWDPProjet_AppliDistributeurNourriture.ms_Project.vWD_gnNbreRepas.opEgal("0"))
 {
-// 	Info("Merci de sélectionner un nombre de repas pour la journée")
-WDAPIDialogue.info("Merci de sélectionner un nombre de repas pour la journée");
+// 	erreur("Merci de sélectionner un nombre de repas pour la journée")
+WDAPIDialogue.erreur("Merci de sélectionner un nombre de repas pour la journée");
 
 }
 else
@@ -411,8 +411,8 @@ for(WDObjet vWD_j = new WDEntier(vWD_i.opPlus(1));vWD_j.opInfEgal(vWD_nTailleZR)
 // 			SI ZR_Params[i].SAI_Heure = ZR_Params[j].SAI_Heure et ok = Vrai ALORS
 if((mWD_ZR_Params.get(vWD_i).get("SAI_Heure").opEgal(mWD_ZR_Params.get(vWD_j).get("SAI_Heure")) & vWD_ok.opEgal(true)))
 {
-// 				Info("Erreur ! Saisissez des repas différents ! ")
-WDAPIDialogue.info("Erreur ! Saisissez des repas différents ! ");
+// 				erreur("Erreur ! Saisissez des repas différents ! ")
+WDAPIDialogue.erreur("Erreur ! Saisissez des repas différents ! ");
 
 // 				ok = faux
 vWD_ok.setValeur(false);
@@ -678,7 +678,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(2);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 1000, 1000);
 
 super.setNumTab(3);
 
@@ -905,7 +905,7 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(13, 145);
+super.setPositionInitiale(19, 155);
 
 super.setTailleInitiale(294, 281);
 
@@ -921,7 +921,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(4);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(8, 1000, 1000, 500, 1000);
 
 super.setNumTab(3);
 
@@ -1008,7 +1008,7 @@ super.setNote("");
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(60, 100);
+super.setPositionInitiale(66, 121);
 
 super.setTailleInitiale(116, 32);
 
@@ -1082,7 +1082,7 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(19, 101);
+super.setPositionInitiale(25, 121);
 
 super.setTailleInitiale(39, 32);
 
@@ -1149,8 +1149,8 @@ super.clicSurBoutonGauche();
 // si ZR_Params..Occurrence = 5 ALORS
 if(mWD_ZR_Params.getOccurrence().opEgal(5))
 {
-// 	info("Nombre de repas maximum atteint !")
-WDAPIDialogue.info("Nombre de repas maximum atteint !");
+// 	Erreur("Nombre de repas maximum atteint !")
+WDAPIDialogue.erreur("Nombre de repas maximum atteint !");
 
 }
 else
@@ -1242,16 +1242,16 @@ WDObjet vWD_SourceXML= new WDChaineU();
 
 
 
-// SourceXML est une chaîne = fChargeTexte("/storage/sdcard0/Download/FichierParamètresXML.xml")
+// SourceXML est une chaîne = fChargeTexte("/storage/sdcard0/Download/FichierParametresXML.xml")
 
-vWD_SourceXML.setValeur(WDAPIFichier.fChargeTexte("/storage/sdcard0/Download/FichierParamètresXML.xml"));
+vWD_SourceXML.setValeur(WDAPIFichier.fChargeTexte("/storage/sdcard0/Download/FichierParametresXML.xml"));
 
 
-// SI SourceXML = "" ALORS
+// si SourceXML = "" ALORS
 if(vWD_SourceXML.opEgal(""))
 {
-// 	Info("Pas de fichier existant !")
-WDAPIDialogue.info("Pas de fichier existant !");
+// 	erreur("Pas de fichier existant !")
+WDAPIDialogue.erreur("Pas de fichier existant !");
 
 }
 else
@@ -1312,10 +1312,24 @@ mWD_ZR_Params.get(5).get("COMBO_ration").setValeur(WDAPIXmlClassic.xmlExtraitCha
 
 }
 
-// 	ToastAffiche("Fichier chargé !")
-WDAPIToast.toastAffiche("Fichier chargé !");
+// 	ToastAffiche("Fichier chargé !",toastCourt,cvHaut)
+WDAPIToast.toastAffiche("Fichier chargé !",0,0);
 
 }
+
+}
+
+
+
+/**
+ * Traitement: Fermeture de FEN_Paramètres
+ */
+public void fermetureFenetre()
+{
+super.fermetureFenetre();
+
+// OuvreFenêtreMobile(FEN_choixAction)
+WDAPIFenetre.ouvreFille(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_choixAction);
 
 }
 
@@ -1381,7 +1395,7 @@ super.setGFI(true);
 
 super.setAnimationFenetre(0);
 
-super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\Bg_Hybrid_Menu_Popup.png?_3NP_1_223_1_180", 1, 0, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\Bg_ColorSide_Orange021.png?_3NP_1_223_1_180", 1, 0, 1);
 
 
 activerEcoute();

@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Fenêtre
  * Classe Android : FEN_Appel
- * Date : 10/03/2016 14:11:12
+ * Date : 07/04/2016 14:27:14
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -17,6 +17,7 @@ import fr.pcsoft.wdjava.ui.champs.fenetre.*;
 import fr.pcsoft.wdjava.ui.champs.multimedia.*;
 import fr.pcsoft.wdjava.ui.champs.bouton.*;
 import fr.pcsoft.wdjava.api.*;
+import fr.pcsoft.wdjava.ui.champs.libelle.*;
 import fr.pcsoft.wdjava.ui.activite.*;
 /*Imports trouvés dans le code WL*/
 /*Fin Imports trouvés dans le code WL*/
@@ -63,7 +64,7 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(2, 27);
+super.setPositionInitiale(2, 89);
 
 super.setTailleInitiale(316, 342);
 
@@ -77,7 +78,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(1);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(4, 1000, 1000, 500, 1000);
 
 super.setNumTab(1);
 
@@ -137,15 +138,15 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(14, 418);
+super.setPositionInitiale(2, 448);
 
-super.setTailleInitiale(143, 48);
+super.setTailleInitiale(155, 44);
 
 super.setPlan(0);
 
 super.setImageEtat(1);
 
-super.setImageFondEtat(1);
+super.setImageFondEtat(5);
 
 super.setTailleMin(0, 0);
 
@@ -155,7 +156,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(2);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(1, 1000, 1000, 1000, 1000);
 
 super.setNumTab(2);
 
@@ -187,7 +188,7 @@ super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
 
 super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
 
-super.setImageFond("", 1, 0, 2, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\OMEGA010110.png?E5", 1, 0, 2, 1);
 
 activerEcoute();
 super.terminerInitialisation();
@@ -231,8 +232,8 @@ vWD_bResAppel.setValeur(WDAPIMediaPlayer.multimediaJoue(mWD_MM_Appel,vWD_sAdress
 // SI bResAppel = Faux ALORS
 if(vWD_bResAppel.opEgal(false))
 {
-// 	Info("Lecture Impossible")
-WDAPIDialogue.info("Lecture Impossible");
+// 	Erreur("Lecture Impossible")
+WDAPIDialogue.erreur("Lecture Impossible");
 
 }
 
@@ -283,15 +284,15 @@ super.setNavigable(true);
 
 super.setEtatInitial(0);
 
-super.setPositionInitiale(159, 418);
+super.setPositionInitiale(169, 448);
 
-super.setTailleInitiale(142, 48);
+super.setTailleInitiale(149, 44);
 
 super.setPlan(0);
 
 super.setImageEtat(1);
 
-super.setImageFondEtat(1);
+super.setImageFondEtat(5);
 
 super.setTailleMin(0, 0);
 
@@ -301,7 +302,7 @@ super.setVisibleInitial(true);
 
 super.setAltitude(3);
 
-super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+super.setAncrageInitial(5, 1000, 1000, 1000, 1000);
 
 super.setNumTab(3);
 
@@ -333,7 +334,99 @@ super.setStyleCadreSurvol(2, 0xF2000000, 0xF4000000, 0x0, 4, 4);
 
 super.setStyleCadreEnfonce(2, 0x0, 0xF4000000, 0x0, 4, 4);
 
-super.setImageFond("", 1, 0, 2, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\OMEGA01019.png?E5", 1, 0, 2, 1);
+
+activerEcoute();
+super.terminerInitialisation();
+}
+
+/**
+ * Traitement: Clic sur BTN_Stop
+ */
+public void clicSurBoutonGauche()
+{
+super.clicSurBoutonGauche();
+
+// MultimédiaFerme(MM_Appel)
+WDAPIMediaPlayer.multimediaFerme(mWD_MM_Appel);
+
+// Ferme(FEN_Appel)
+WDAPIFenetre.ferme(GWDPProjet_AppliDistributeurNourriture.ms_Project.mWD_FEN_Appel);
+
+}
+
+
+
+// Activation des écouteurs: 
+public void activerEcoute()
+{
+super.activerEcouteurClic();
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des variables globales
+////////////////////////////////////////////////////////////////////////////
+}
+public GWDBTN_Stop mWD_BTN_Stop;
+
+/**
+ * LIB_Appel
+ */
+class GWDLIB_Appel extends WDLibelle
+{
+
+////////////////////////////////////////////////////////////////////////////
+// Déclaration des champs du fils n°4 de FEN_Appel.LIB_Appel
+////////////////////////////////////////////////////////////////////////////
+public  void initialiserObjet()
+{
+super.initialiserObjet();
+super.setFenetre( getWDFenetreThis() );
+super.setQuid(2804543627791488938l);
+
+super.setChecksum("713333396");
+
+super.setNom("LIB_Appel");
+
+super.setType(3);
+
+super.setTypeSaisie(0);
+
+super.setMasqueSaisie(new WDChaineU("0"));
+
+super.setLibelle("Appel");
+
+super.setNote("");
+
+super.setEtatInitial(0);
+
+super.setPositionInitiale(125, 17);
+
+super.setTailleInitiale(116, 32);
+
+super.setPlan(0);
+
+super.setCadrageHorizontal(0);
+
+super.setCadrageVertical(0);
+
+super.setTailleMin(0, 0);
+
+super.setTailleMax(2147483647, 2147483647);
+
+super.setVisibleInitial(true);
+
+super.setAltitude(4);
+
+super.setAncrageInitial(0, 1000, 1000, 1000, 1000);
+
+super.setEllipse(0);
+
+super.setPresenceLibelle(true);
+
+super.setStyleLibelle(0xFFFFFF, 0xFFFFFFFF, creerPolice("MS Shell Dlg", -12.000000, 0), 3);
+
+super.setCadreExterieur(1, 0xFFFFFFFF, 0xE0E0E0, 0x808080, 4, 4);
 
 activerEcoute();
 super.terminerInitialisation();
@@ -348,7 +441,7 @@ public void activerEcoute()
 // Déclaration des variables globales
 ////////////////////////////////////////////////////////////////////////////
 }
-public GWDBTN_Stop mWD_BTN_Stop;
+public GWDLIB_Appel mWD_LIB_Appel;
 
 /**
  * Traitement: Déclarations globales de FEN_Appel
@@ -380,6 +473,7 @@ protected void creerChamps()
 mWD_MM_Appel = new GWDMM_Appel();
 mWD_BTN_Play = new GWDBTN_Play();
 mWD_BTN_Stop = new GWDBTN_Stop();
+mWD_LIB_Appel = new GWDLIB_Appel();
 
 }
 ////////////////////////////////////////////////////////////////////////////
@@ -421,7 +515,7 @@ super.setGFI(true);
 
 super.setAnimationFenetre(0);
 
-super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\BG_Hybrid_Menu.png?_3NP_1_223_1_180", 1, 0, 1);
+super.setImageFond("D:\\SN1IR2016\\ARNAUD Adrien\\Projet_WM\\Projet_AppliDistributeurNourriture\\Bg_ColorSide_Orange02.png?_3NP_1_223_1_180", 1, 0, 1);
 
 
 activerEcoute();
@@ -435,6 +529,8 @@ mWD_BTN_Play.initialiserObjet();
 super.ajouter("BTN_Play", mWD_BTN_Play);
 mWD_BTN_Stop.initialiserObjet();
 super.ajouter("BTN_Stop", mWD_BTN_Stop);
+mWD_LIB_Appel.initialiserObjet();
+super.ajouter("LIB_Appel", mWD_LIB_Appel);
 
 super.terminerInitialisation();
 }

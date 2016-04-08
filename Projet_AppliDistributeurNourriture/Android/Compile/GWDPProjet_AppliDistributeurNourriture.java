@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Projet
  * Classe Android : Projet_AppliDistributeurNourriture
- * Date : 17/03/2016 14:10:46
+ * Date : 07/04/2016 14:40:13
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -14,6 +14,7 @@ import com.masociete.projet_applidistributeurnourriture.*;
 import fr.pcsoft.wdjava.core.types.*;
 import fr.pcsoft.wdjava.core.*;
 import fr.pcsoft.wdjava.core.application.*;
+import fr.pcsoft.wdjava.api.*;
 /*Imports trouvés dans le code WL*/
 /*Fin Imports trouvés dans le code WL*/
 
@@ -211,16 +212,19 @@ GWDPProjet_AppliDistributeurNourriture.ms_Project = new GWDPProjet_AppliDistribu
 
 // Définition des langues du projet
 GWDPProjet_AppliDistributeurNourriture.ms_Project.setLangueProjet(new int[] {1}, new int[] {0}, 1);
+GWDPProjet_AppliDistributeurNourriture.ms_Project.setNomAnalyseProjet("projet_applidistributeurnourriture");
+GWDPProjet_AppliDistributeurNourriture.ms_Project.setModeGestionFichier(true);
+GWDPProjet_AppliDistributeurNourriture.ms_Project.setCreationAutomatiqueFichierDonnees(true);
 GWDPProjet_AppliDistributeurNourriture.ms_Project.setNomCollectionProcedure(new String[]{});
 }
-public String getVersionApplication(){ return "0.0.143.0";}
+public String getVersionApplication(){ return "0.0.321.0";}
 public String getNomAPK(){ return "Distributeur";}
 public int getIdNomApplication(){return com.masociete.projet_applidistributeurnourriture.R.string.app_name;}
 public boolean isModeAnsi(){ return false;}
 public boolean isAffectationTableauParCopie(){ return true;}
 public boolean isAssistanceAutoHFActive(){ return true;}
 public String getPackageRacine(){ return "com.masociete.projet_applidistributeurnourriture";}
-public int getIdIconeApplication(){ return com.masociete.projet_applidistributeurnourriture.R.drawable.i_c_o_n_e________0;}
+public int getIdIconeApplication(){ return com.masociete.projet_applidistributeurnourriture.R.drawable.i_c_o_n_e________1;}
 public int getInfoPlateforme(EWDInfoPlateforme info)
 {
 switch(info)
@@ -241,14 +245,19 @@ return false;
 }
 protected void declarerRessources()
 {
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\POUB.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.poub_5_selector, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\PLUS.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.plus_4_selector, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_3_np3_1_223_1_180, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_3_np3_1_223_1_180, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_3_np3_1_223_1_180, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU_POPUP.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_popup_3_np3_1_223_1_180, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_2_np3_1_223_1_180, "");
-super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_HYBRID_MENU.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_hybrid_menu_2_np3_1_223_1_180, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\OMEGA010112.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.omega010112_13_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\OMEGA0101.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.omega0101_12_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\OMEGA01013.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.omega01013_11_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\POUB.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.poub_10_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\PLUS.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.plus_9_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\OMEGA01012.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.omega01012_8_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_COLORSIDE_ORANGE021.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_colorside_orange021_7_np3_1_223_1_180, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\OMEGA01011.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.omega01011_6_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\OMEGA01019.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.omega01019_5_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\OMEGA010110.PNG?E5",com.masociete.projet_applidistributeurnourriture.R.drawable.omega010110_4_selector, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_COLORSIDE_ORANGE02.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_colorside_orange02_3_np3_1_223_1_180, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_COLORSIDE_ORANGE02.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_colorside_orange02_3_np3_1_223_1_180, "");
+super.ajouterFichierAssocie("D:\\SN1IR2016\\ARNAUD ADRIEN\\PROJET_WM\\PROJET_APPLIDISTRIBUTEURNOURRITURE\\BG_COLORSIDE_ORANGE02.PNG?_3NP_1_223_1_180",com.masociete.projet_applidistributeurnourriture.R.drawable.bg_colorside_orange02_3_np3_1_223_1_180, "");
 }
 
 ////////////////////////////////////////////////////////////////////////////

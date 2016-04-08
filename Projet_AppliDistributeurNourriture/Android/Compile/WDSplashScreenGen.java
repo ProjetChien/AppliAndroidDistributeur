@@ -2,7 +2,7 @@
  * Code généré par WinDev Mobile - NE PAS MODIFIER !
  * Objet WinDev Mobile : Splash Screen
  * Classe Android : Projet_AppliDistributeurNourriture
- * Date : 17/03/2016 14:10:46
+ * Date : 07/04/2016 14:40:13
  * Version de wdjava.dll  : 20.0.143.0
  */
 
@@ -22,7 +22,7 @@ import fr.pcsoft.wdjava.ui.style.degrade.*;
 
 public class WDSplashScreenGen implements IWDSplashScreen
 {
-public int getIdImageFond(){return com.masociete.projet_applidistributeurnourriture.R.drawable.s_p_l_a_s_c_r_e_e_n________1;}
+public int getIdImageFond(){return com.masociete.projet_applidistributeurnourriture.R.drawable.s_p_l_a_s_c_r_e_e_n________2;}
 public int getModeAffichageImageFond(){return 8;}
 public int getIdNomApplication(){return com.masociete.projet_applidistributeurnourriture.R.string.splashscreen_title;}
 public int getIdInfoVersion(){return com.masociete.projet_applidistributeurnourriture.R.string.splashscreen_version;}
